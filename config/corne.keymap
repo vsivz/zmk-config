@@ -9,6 +9,15 @@
 #include <dt-bindings/zmk/keys.h>
 
 / {
+    behaviors {
+        dot: dot {
+            compatible = "zmk,behavior-tap-dance";
+            label = "DOT";
+            #binding-cells = <0>;
+            bindings = <&kp PERIOD>, <&kp COMMA>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -20,10 +29,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp TAB    &kp Q  &kp W  &kp F     &kp P  &kp G        &kp J    &kp L  &kp U     &kp Y    &kp SEMICOLON  &kp BSPC
-&kp LCTRL  &kp A  &kp R  &kp S     &kp T  &kp D        &kp H    &kp N  &kp E     &kp I    &kp O          &kp SQT
-&kp LSHFT  &kp Z  &kp Z  &kp C     &kp V  &kp B        &kp K    &kp M  &kp X     &kp DOT  &kp FSLH       &kp ESC
-                         &kp LGUI  &mo 1  &kp SPACE    &kp RET  &mo 2  &kp RALT
+&kp TAB    &kp Q  &kp W  &kp F     &kp P  &kp G        &kp J        &kp L  &kp U     &kp Y  &kp SEMICOLON  &kp BSPC
+&kp LCTRL  &kp A  &kp R  &kp S     &kp T  &kp D        &kp H        &kp N  &kp E     &kp I  &kp O          &kp SQT
+&kp LSHFT  &kp Z  &kp Z  &kp C     &kp V  &kp B        &kp K        &kp M  &kp X     &dot   &kp FSLH       &kp ESC
+                         &kp LGUI  &mo 1  &kp SPACE    &lt 2 SPACE  &mo 2  &kp RALT
             >;
         };
 
@@ -54,6 +63,15 @@
 &kp LCTRL  &trans    &trans  &trans    &trans    &trans       &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT  &kp BSLH  &kp GRAVE
 &kp LSHFT  &trans    &trans  &trans    &trans    &trans       &kp UNDER  &kp PLUS   &kp LBRC   &kp RBRC  &kp PIPE  &kp TILDE
                              &kp LGUI  &trans    &kp SPACE    &kp RET    &trans     &kp RALT
+            >;
+        };
+
+        navigation {
+            bindings = <
+&trans  &trans             &trans             &trans         &trans         &trans           &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp LG(LC(LS(J)))  &kp LS(LC(LG(H)))  &kp LG(LA(J))  &kp LA(LG(H))  &kp LG(LC(R))    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans             &trans             &trans         &trans         &trans           &trans  &trans  &trans  &trans  &trans  &trans
+                                              &trans         &trans         &trans           &trans  &trans  &trans
             >;
         };
     };
