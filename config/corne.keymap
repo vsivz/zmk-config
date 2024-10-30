@@ -31,11 +31,11 @@
 &kp TAB    &kp Q  &kp W  &kp F     &kp P        &kp G        &kp J        &kp L  &kp U     &kp Y  &kp SEMICOLON  &kp BSPC
 &kp LCTRL  &kp A  &kp R  &kp S     &mt LSHFT T  &kp D        &mt H LSHFT  &kp N  &kp E     &kp I  &kp O          &kp SQT
 &kp LSHFT  &kp Z  &kp Z  &kp C     &kp V        &kp B        &kp K        &kp M  &kp X     &dot   &kp FSLH       &kp ESC
-                         &kp LGUI  &mo 1        &kp SPACE    &lt 2 SPACE  &mo 2  &kp RALT
+                         &kp LGUI  &mo 1        &kp SPACE    &lt 0 SPACE  &mo 0  &kp RALT
             >;
         };
 
-        lower_layer {
+        numbers {
             // -----------------------------------------------------------------------------------------
             // |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BSPC |
             // | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
@@ -50,27 +50,21 @@
             >;
         };
 
-        raise_layer {
-            // -----------------------------------------------------------------------------------------
-            // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BSPC |
-            // | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
-            // | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
-            //                    | GUI |     | SPC |   | ENT |     | ALT |
-
-            bindings = <
-&kp TAB    &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  &kp BSPC
-&kp LCTRL  &trans    &trans  &trans    &trans    &trans       &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT  &kp BSLH  &kp GRAVE
-&kp LSHFT  &trans    &trans  &trans    &trans    &trans       &kp UNDER  &kp PLUS   &kp LBRC   &kp RBRC  &kp PIPE  &kp TILDE
-                             &kp LGUI  &trans    &kp SPACE    &kp RET    &trans     &kp RALT
-            >;
-        };
-
         navigation {
             bindings = <
 &trans  &trans             &trans             &trans         &trans         &trans           &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &kp LG(LC(LS(J)))  &kp LS(LC(LG(H)))  &kp LG(LA(J))  &kp LA(LG(H))  &kp LG(LC(R))    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans             &trans             &trans         &trans         &trans           &trans  &trans  &trans  &trans  &trans  &trans
                                               &trans         &trans         &trans           &trans  &trans  &trans
+            >;
+        };
+
+        symbols {
+            bindings = <
+&trans  &kp LS(TILDE)  &kp LS(AMPS)     &kp LS(STAR)   &kp SQT      &kp LS(QMARK)    &kp BSLH      &kp LS(PIPE)   &kp LS(LEFT_BRACE)  &kp RIGHT_BRACE  &kp LS(COLON)  &trans
+&trans  &kp PERCENT    &kp LS(UNDER)    &kp LS(CARET)  &kp DOT      &kp EQUAL        &kp LS(PLUS)  &kp MINUS      &kp LS(LPAR)        &kp LS(RPAR)     &kp LS(DLLR)   &trans
+&trans  &trans         &kp EXCLAMATION  &kp LS(AT)     &kp LS(DQT)  &kp GRAVE        &kp FSLH      &kp LS(POUND)  &kp LBKT            &kp RBKT         &trans         &trans
+                                        &trans         &trans       &trans           &trans        &trans         &trans
             >;
         };
     };
