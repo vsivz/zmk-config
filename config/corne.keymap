@@ -61,6 +61,23 @@
             tapping-term-ms = <185>;
             flavor = "balanced";
         };
+
+        as: as {
+            compatible = "zmk,behavior-sticky-key";
+            label = "AS";
+            bindings = <&kp>;
+            #binding-cells = <1>;
+            release-after-ms = <400>;
+        };
+    };
+
+    macros {
+        sret: sret {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp END &kp LS(RET)>;
+            label = "SRET";
+        };
     };
 
     keymap {
@@ -89,10 +106,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp DEL  &kp DOT  &kp MINUS  &kp LS(PLUS)  &kp LS(UNDER)  &none        &none     &none   &none     &none   &kp COLON  &none
-&none    &kp N0   &kp N1     &kp N2        &kp N3         &kp N4       &kp N5    &kp N6  &kp N7    &kp N8  &kp N9     &trans
-&none    &trans   &trans     &kp FSLH      &trans         &trans       &kp FSLH  &trans  &kp X     &trans  &trans     &trans
-                             &kp LGUI      &trans         &kp SPACE    &kp RET   &trans  &kp RALT
+&kp DEL  &kp DOT  &kp MINUS  &kp LS(PLUS)  &kp LS(UNDER)  &none        &none     &none          &none     &none   &kp COLON  &none
+&none    &kp N0   &kp N1     &kp N2        &kp N3         &kp N4       &kp N5    &kp N6         &kp N7    &kp N8  &kp N9     &trans
+&none    &trans   &trans     &kp FSLH      &trans         &trans       &kp FSLH  &kp LA(SPACE)  &kp X     &trans  &trans     &trans
+                             &kp LGUI      &trans         &kp SPACE    &kp RET   &trans         &kp RALT
             >;
         };
 
@@ -116,10 +133,10 @@
 
         functions {
             bindings = <
-&trans  &trans        &kp ESC         &trans        &trans         &trans    &trans   &trans   &trans        &kp END   &kp HOME  &trans
-&trans  &kp LEFT      &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT      &trans    &kp TAB  &kp RET  &kp LC(BSPC)  &kp BSPC  &kp END   &kp RET
-&trans  &kp LC(LEFT)  &kp LC(DOWN)    &kp LC(UP)    &kp LC(RIGHT)  &trans    &kp DEL  &trans   &trans        &trans    &trans    &trans
-                                      &trans        &trans         &trans    &trans   &trans   &trans
+&trans  &trans        &kp ESC         &none         &as LA(LSHFT)  &kp LC(TAB)    &kp LS(LC(TAB))  &trans   &sret                    &kp END        &kp HOME  &trans
+&trans  &kp LEFT      &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT      &trans         &kp TAB          &kp RET  &kp LC(BSPC)             &kp BSPC       &kp END   &kp RET
+&trans  &kp LC(LEFT)  &kp LC(DOWN)    &kp LC(UP)    &kp LC(RIGHT)  &trans         &kp DELETE       &trans   &kp LG(LS(PRINTSCREEN))  &kp LC(LA(T))  &trans    &trans
+                                      &trans        &trans         &trans         &trans           &trans   &trans
             >;
         };
     };
