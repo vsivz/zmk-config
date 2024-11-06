@@ -107,36 +107,36 @@
 
             bindings = <
 &kp DEL  &kp DOT  &kp MINUS  &kp LS(PLUS)  &kp LS(UNDER)  &none        &none     &none          &none     &none   &kp COLON  &none
-&none    &kp N0   &kp N1     &kp N2        &kp N3         &kp N4       &kp N5    &kp N6         &kp N7    &kp N8  &kp N9     &trans
-&none    &trans   &trans     &kp FSLH      &trans         &trans       &kp FSLH  &kp LA(SPACE)  &kp X     &trans  &trans     &trans
-                             &kp LGUI      &trans         &kp SPACE    &kp RET   &trans         &kp RALT
+&none    &kp N0   &kp N1     &kp N2        &kp N3         &kp N4       &kp N5    &kp N6         &kp N7    &kp N8  &kp N9     &none
+&none    &none    &none      &kp FSLH      &none          &none        &kp FSLH  &kp LA(SPACE)  &kp X     &none   &none      &none
+                             &kp LGUI      &none          &kp SPACE    &kp RET   &none          &kp RALT
             >;
         };
 
         navigation {
             bindings = <
-&trans  &trans              &kp LG(LC(LS(T)))  &kp LG(LC(LS(Q)))   &kp LG(RET)    &kp RA(F4)           &trans                &trans             &trans             &trans                  &trans             &trans
-&trans  &kp LG(LC(LS(J)))   &kp LS(LC(LG(H)))  &kp LG(LA(J))       &kp LA(LG(H))  &kp LG(LC(LS(R)))    &kp LG(LC(UP_ARROW))  &kp LS(LC(LG(Z)))  &kp LG(LC(RIGHT))  &kp LG(LS(LEFT_ARROW))  &kp LS(LG(RIGHT))  &trans
-&trans  &kp LG(DOWN_ARROW)  &kp LG(UP_ARROW)   &kp LG(LEFT_ARROW)  &kp LG(RIGHT)  &trans               &trans                &trans             &trans             &trans                  &trans             &trans
-                                               &trans              &trans         &trans               &trans                &trans             &trans
+&none  &none               &kp LG(LC(LS(T)))  &kp LG(LC(LS(Q)))   &kp LG(RET)    &kp LA(F4)           &none                 &none              &none              &none                   &none              &none
+&none  &kp LG(LC(LS(J)))   &kp LS(LC(LG(H)))  &kp LG(LA(J))       &kp LA(LG(H))  &kp LG(LC(LS(R)))    &kp LG(LC(UP_ARROW))  &kp LS(LC(LG(Z)))  &kp LG(LC(RIGHT))  &kp LG(LS(LEFT_ARROW))  &kp LS(LG(RIGHT))  &none
+&none  &kp LG(DOWN_ARROW)  &kp LG(UP_ARROW)   &kp LG(LEFT_ARROW)  &kp LG(RIGHT)  &none                &none                 &none              &none              &none                   &none              &none
+                                              &none               &none          &none                &none                 &none              &none
             >;
         };
 
         symbols {
             bindings = <
-&trans  &kp GRAVE    &kp AMPERSAND    &kp ASTRK  &kp SQT            &kp QUESTION    &kp BSLH  &kp PIPE   &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp LS(COLON)  &trans
-&trans  &kp PERCENT  &kp UNDER        &kp CARET  &kp BACKSLASH      &kp EQUAL       &kp PLUS  &kp MINUS  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp DOLLAR     &trans
-&trans  &trans       &kp EXCLAMATION  &kp AT     &kp DOUBLE_QUOTES  &kp GRAVE       &kp FSLH  &kp HASH   &kp LBKT              &kp RBKT               &trans         &trans
-                                      &trans     &trans             &trans          &trans    &trans     &trans
+&none  &kp GRAVE    &kp AMPERSAND    &kp ASTRK  &kp SQT            &kp QUESTION    &kp BSLH  &kp PIPE   &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp LS(COLON)  &none
+&none  &kp PERCENT  &kp UNDER        &kp CARET  &kp BACKSLASH      &kp EQUAL       &kp PLUS  &kp MINUS  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp DOLLAR     &none
+&none  &none        &kp EXCLAMATION  &kp AT     &kp DOUBLE_QUOTES  &kp GRAVE       &kp FSLH  &kp HASH   &kp LBKT              &kp RBKT               &none          &none
+                                     &none      &none              &none           &none     &none      &none
             >;
         };
 
         functions {
             bindings = <
-&trans  &trans        &kp ESC         &none         &as LA(LSHFT)  &kp LC(TAB)    &kp LS(LC(TAB))  &trans   &sret                    &kp END        &kp HOME  &trans
-&trans  &kp LEFT      &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT      &trans         &kp TAB          &kp RET  &kp LC(BSPC)             &kp BSPC       &kp END   &kp RET
-&trans  &kp LC(LEFT)  &kp LC(DOWN)    &kp LC(UP)    &kp LC(RIGHT)  &trans         &kp DELETE       &trans   &kp LG(LS(PRINTSCREEN))  &kp LC(LA(T))  &trans    &trans
-                                      &trans        &trans         &trans         &trans           &trans   &trans
+&none  &none         &kp ESC         &none         &as LA(LSHFT)  &kp LC(TAB)    &kp LS(LC(TAB))  &none                    &sret          &kp END   &kp HOME  &none
+&none  &kp LEFT      &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT      &none          &kp TAB          &kp RET                  &kp LC(BSPC)   &kp BSPC  &kp END   &kp RET
+&none  &kp LC(LEFT)  &kp LC(DOWN)    &kp LC(UP)    &kp LC(RIGHT)  &none          &kp DELETE       &kp LG(LS(PRINTSCREEN))  &kp LC(LA(T))  &none     &none     &none
+                                     &none         &none          &none          &none            &none                    &none
             >;
         };
     };
