@@ -6,6 +6,7 @@
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/keys.h>
 
 / {
     behaviors {
@@ -69,6 +70,13 @@
             #binding-cells = <1>;
             release-after-ms = <400>;
         };
+
+        tdth: tdth {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TDTH";
+            #binding-cells = <0>;
+            bindings = <&lt 2 SPACE>, <&ht_lyr 1 4>;
+        };
     };
 
     macros {
@@ -77,6 +85,34 @@
             #binding-cells = <0>;
             bindings = <&kp END &kp LS(RET)>;
             label = "SRET";
+        };
+
+        af4: af4 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kt LEFT_ALT &kp F4 &kt LEFT_ALT>;
+            label = "AF4";
+        };
+
+        endRet: endRet {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp END &kp RET>;
+            label = "ENDRET";
+        };
+
+        cpln: cpln {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp HOME &kp HOME &kp HOME &kp LS(END) &kp LC(C) &kp END>;
+            label = "CPLN";
+        };
+
+        dlln: dlln {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp HOME &kp HOME &kp LS(END) &kp DEL>;
+            label = "DLLN";
         };
     };
 
@@ -91,10 +127,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&ht_ctl LCTRL LCTRL  &kp Q        &kp W  &kp F     &kp P          &kp G                  &kp J  &kp L          &kp U     &kp Y  &kp SEMICOLON  &ht_ctl LCTRL LCTRL
-&none                &kp A        &kp R  &kp S     &ht_k LSHFT T  &kp D                  &kp H  &ht_k LSHFT N  &kp E     &kp I  &kp O          &none
-&none                &ht_lyr 3 3  &kp Z  &kp C     &kp V          &kp B                  &kp K  &kp M          &kp X     &dot   &ht_lyr 3 3    &none
-                                         &kp LGUI  &ht_lyr 1 4    &ht_ctl LCTRL LCTRL    &none  &lt 2 SPACE    &kp RALT
+&none  &kp Q        &kp W  &kp F     &kp P          &kp G                  &kp J                &kp L          &kp U     &kp Y  &kp SEMICOLON  &none
+&none  &kp A        &kp R  &kp S     &ht_k LSHFT T  &kp D                  &kp H                &ht_k LSHFT N  &kp E     &kp I  &kp O          &none
+&none  &ht_lyr 3 3  &kp Z  &kp C     &kp V          &kp B                  &kp K                &kp M          &kp X     &dot   &ht_lyr 3 3    &none
+                           &kp LGUI  &ht_lyr 1 4    &ht_ctl LCTRL LCTRL    &ht_ctl LCTRL LCTRL  &tdth          &kp RALT
             >;
         };
 
@@ -115,9 +151,9 @@
 
         navigation {
             bindings = <
-&none  &none               &kp LG(LC(LS(T)))  &kp LG(LC(LS(Q)))   &kp LG(RET)    &kp LA(F4)           &none                 &none              &none              &none                   &none              &none
+&none  &none               &kp LG(LC(LS(T)))  &kp LG(LC(LS(Q)))   &kp LG(RET)    &af4                 &dlln                 &none              &none              &none                   &none              &none
 &none  &kp LG(LC(LS(J)))   &kp LS(LC(LG(H)))  &kp LG(LA(J))       &kp LA(LG(H))  &kp LG(LC(LS(R)))    &kp LG(LC(UP_ARROW))  &kp LS(LC(LG(Z)))  &kp LG(LC(RIGHT))  &kp LG(LS(LEFT_ARROW))  &kp LS(LG(RIGHT))  &none
-&none  &kp LG(DOWN_ARROW)  &kp LG(UP_ARROW)   &kp LG(LEFT_ARROW)  &kp LG(RIGHT)  &none                &none                 &none              &none              &none                   &none              &none
+&none  &kp LG(DOWN_ARROW)  &kp LG(UP_ARROW)   &kp LG(LEFT_ARROW)  &kp LG(RIGHT)  &none                &cpln                 &kp LC(HOME)       &kp LC(END)        &none                   &none              &none
                                               &none               &none          &none                &none                 &none              &none
             >;
         };
@@ -133,10 +169,10 @@
 
         functions {
             bindings = <
-&none  &none         &kp ESC         &none         &as LA(LSHFT)  &kp LC(TAB)    &kp LS(LC(TAB))  &none                    &sret          &kp END   &kp HOME  &none
-&none  &kp LEFT      &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT      &none          &kp TAB          &kp RET                  &kp LC(BSPC)   &kp BSPC  &kp END   &kp RET
-&none  &kp LC(LEFT)  &kp LC(DOWN)    &kp LC(UP)    &kp LC(RIGHT)  &none          &kp DELETE       &kp LG(LS(PRINTSCREEN))  &kp LC(LA(T))  &none     &none     &none
-                                     &none         &none          &none          &none            &none                    &none
+&none  &none         &kp ESC         &none         &as LA(LSHFT)  &kp LC(TAB)      &kp LS(LC(TAB))  &sk LEFT_META            &sret          &kp END   &kp HOME  &none
+&none  &kp LEFT      &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT      &kp RMETA        &kp TAB          &kp RET                  &kp LC(BSPC)   &kp BSPC  &endRet   &kp RET
+&none  &kp LC(LEFT)  &kp LC(DOWN)    &kp LC(UP)    &kp LC(RIGHT)  &kp LA(SPACE)    &kp DELETE       &kp LG(LS(PRINTSCREEN))  &kp LC(LA(T))  &none     &none     &none
+                                     &none         &none          &none            &none            &none                    &none
             >;
         };
     };
