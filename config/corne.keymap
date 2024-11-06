@@ -15,6 +15,32 @@
             #binding-cells = <0>;
             bindings = <&kp PERIOD>, <&kp COMMA>;
         };
+
+        ht_ctl: ht_ctl {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HT_CTL";
+            bindings = <&kp>, <&sk>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <500>;
+        };
+
+        nx_fn: nx_fn {
+            compatible = "zmk,behavior-sticky-key";
+            label = "NX_FN";
+            bindings = <&tog>;
+            #binding-cells = <1>;
+            release-after-ms = <500>;
+        };
+
+        lyr_num: lyr_num {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LYR_NUM";
+            bindings = <&tog>, <&nx_fn>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <160>;
+        };
     };
 
     keymap {
@@ -28,10 +54,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp TAB    &kp Q  &kp W  &kp F     &kp P        &kp G        &kp J        &kp L  &kp U     &kp Y  &kp SEMICOLON  &kp BSPC
-&kp LCTRL  &kp A  &kp R  &kp S     &mt LSHFT T  &kp D        &mt H LSHFT  &kp N  &kp E     &kp I  &kp O          &kp SQT
-&kp LSHFT  &kp Z  &kp Z  &kp C     &kp V        &kp B        &kp K        &kp M  &kp X     &dot   &kp FSLH       &kp ESC
-                         &kp LGUI  &mo 1        &kp SPACE    &lt 0 SPACE  &mo 0  &kp RALT
+&ht_ctl LCTRL LCTRL  &kp Q     &kp W  &kp F     &kp P        &kp G           &kp J        &kp L        &kp U     &kp Y  &kp SEMICOLON  &kp BSPC
+&kp LCTRL            &kp A     &kp R  &kp S     &mt LSHFT T  &kp D           &kp H        &mt LSHFT N  &kp E     &kp I  &kp O          &kp SQT
+&kp LSHFT            &nx_fn 3  &kp Z  &kp C     &kp V        &kp B           &kp K        &kp M        &kp X     &dot   &nx_fn 3       &kp ESC
+                                      &kp LGUI  &mo 1        &lyr_num 1 4    &lt 0 SPACE  &mo 0        &kp RALT
             >;
         };
 
@@ -43,9 +69,9 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp DEL  &kp DOT  &kp MINUS  &kp LS(PLUS)  &kp LS(UNDER)  &none        &none     &none   &none     &none   &none   &none
-&none    &kp N0   &kp N1     &kp N2        &kp N3         &kp N4       &kp N5    &kp N6  &kp N7    &kp N8  &kp N9  &trans
-&none    &trans   &trans     &kp FSLH      &trans         &trans       &kp FSLH  &trans  &kp X     &trans  &trans  &trans
+&kp DEL  &kp DOT  &kp MINUS  &kp LS(PLUS)  &kp LS(UNDER)  &none        &none     &none   &none     &none   &kp COLON  &none
+&none    &kp N0   &kp N1     &kp N2        &kp N3         &kp N4       &kp N5    &kp N6  &kp N7    &kp N8  &kp N9     &trans
+&none    &trans   &trans     &kp FSLH      &trans         &trans       &kp FSLH  &trans  &kp X     &trans  &trans     &trans
                              &kp LGUI      &trans         &kp SPACE    &kp RET   &trans  &kp RALT
             >;
         };
@@ -65,6 +91,15 @@
 &trans  &kp PERCENT    &kp LS(UNDER)    &kp LS(CARET)  &kp DOT      &kp EQUAL        &kp LS(PLUS)  &kp MINUS      &kp LS(LPAR)        &kp LS(RPAR)     &kp LS(DLLR)   &trans
 &trans  &trans         &kp EXCLAMATION  &kp LS(AT)     &kp LS(DQT)  &kp GRAVE        &kp FSLH      &kp LS(POUND)  &kp LBKT            &kp RBKT         &trans         &trans
                                         &trans         &trans       &trans           &trans        &trans         &trans
+            >;
+        };
+
+        layer_4 {
+            bindings = <
+&trans  &trans        &kp ESC         &trans        &trans         &trans    &trans   &trans   &trans        &kp END   &kp HOME  &trans
+&trans  &kp LEFT      &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT      &trans    &kp TAB  &kp RET  &kp LC(BSPC)  &kp BSPC  &kp END   &kp RET
+&trans  &kp LC(LEFT)  &kp LC(DOWN)    &kp LC(UP)    &kp LC(RIGHT)  &trans    &kp DEL  &trans   &trans        &trans    &trans    &trans
+                                      &trans        &trans         &trans    &trans   &trans   &trans
             >;
         };
     };
