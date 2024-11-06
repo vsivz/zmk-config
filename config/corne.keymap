@@ -41,6 +41,15 @@
             #binding-cells = <2>;
             tapping-term-ms = <160>;
         };
+
+        ht_lyr: ht_lyr {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HT_LYR";
+            bindings = <&mo>, <&sl>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+        };
     };
 
     keymap {
@@ -54,10 +63,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&ht_ctl LCTRL LCTRL  &kp Q     &kp W  &kp F     &kp P        &kp G           &kp J        &kp L        &kp U     &kp Y  &kp SEMICOLON  &ht_ctl LCTRL LCTRL
-&kp LCTRL            &kp A     &kp R  &kp S     &mt LSHFT T  &kp D           &kp H        &mt LSHFT N  &kp E     &kp I  &kp O          &kp SQT
-&kp LSHFT            &nx_fn 3  &kp Z  &kp C     &kp V        &kp B           &kp K        &kp M        &kp X     &dot   &nx_fn 3       &kp ESC
-                                      &kp LGUI  &mo 1        &lyr_num 1 4    &lt 2 SPACE  &mo 0        &kp RALT
+&ht_ctl LCTRL LCTRL  &kp Q        &kp W  &kp F     &kp P        &kp G          &kp J        &kp L        &kp U     &kp Y  &kp SEMICOLON  &ht_ctl LCTRL LCTRL
+&kp LCTRL            &kp A        &kp R  &kp S     &mt LSHFT T  &kp D          &kp H        &mt LSHFT N  &kp E     &kp I  &kp O          &kp SQT
+&kp LSHFT            &ht_lyr 3 3  &kp Z  &kp C     &kp V        &kp B          &kp K        &kp M        &kp X     &dot   &ht_lyr 3 3    &kp ESC
+                                         &kp LGUI  &mo 1        &ht_lyr 1 4    &lt 2 SPACE  &mo 0        &kp RALT
             >;
         };
 
