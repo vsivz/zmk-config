@@ -128,7 +128,7 @@
 
             bindings = <
 &none  &kp Q        &kp W  &kp F     &kp P          &kp G                  &kp J                &kp L          &kp U     &kp Y  &kp SEMICOLON  &none
-&none  &kp A        &kp R  &kp S     &ht_k LSHFT T  &kp D                  &kp H                &ht_k LSHFT N  &kp E     &kp I  &kp O          &none
+&to 4  &kp A        &kp R  &kp S     &ht_k LSHFT T  &kp D                  &kp H                &ht_k LSHFT N  &kp E     &kp I  &kp O          &to 4
 &none  &ht_lyr 3 3  &kp Z  &kp C     &kp V          &kp B                  &kp K                &kp M          &kp X     &dot   &ht_lyr 3 3    &none
                            &kp LGUI  &ht_lyr 1 4    &ht_ctl LCTRL LCTRL    &ht_ctl LCTRL LCTRL  &tdth          &kp RALT
             >;
