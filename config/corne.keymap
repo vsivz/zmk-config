@@ -174,10 +174,10 @@
 
         symbols {
             bindings = <
-&none  &kp GRAVE    &kp AMPERSAND    &kp ASTRK  &kp SQT            &kp QUESTION    &kp BSLH  &kp PIPE   &kp LEFT_BRACE        &kp RIGHT_BRACE        &none       &none
-&none  &kp PERCENT  &kp UNDER        &kp CARET  &kp BACKSLASH      &kp EQUAL       &kp PLUS  &kp MINUS  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp DOLLAR  &none
-&none  &kp TILDE    &kp EXCLAMATION  &kp AT     &kp DOUBLE_QUOTES  &kp GRAVE       &kp FSLH  &kp HASH   &kp LBKT              &kp RBKT               &kp COLON   &none
-                                     &none      &none              &none           &none     &none      &none
+&none  &kp GRAVE      &kp AMPERSAND    &kp ASTRK  &kp TILDE          &kp QUESTION    &kp BSLH  &kp PIPE   &kp LEFT_BRACE        &kp RIGHT_BRACE        &none             &none
+&none  &kp PERCENT    &kp UNDER        &kp CARET  &kp APOSTROPHE     &kp EQUAL       &kp PLUS  &kp MINUS  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp DOLLAR        &none
+&none  &kp LESS_THAN  &kp EXCLAMATION  &kp AT     &kp DOUBLE_QUOTES  &kp GRAVE       &kp FSLH  &kp HASH   &kp LBKT              &kp RBKT               &kp GREATER_THAN  &none
+                                       &none      &none              &none           &none     &none      &none
             >;
         };
 
