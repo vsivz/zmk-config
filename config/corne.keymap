@@ -144,7 +144,7 @@
 &none  &none  &kp W  &kp F        &kp P          &kp G                  &kp J        &kp L          &kp U        &kp Y  &none          &none
 &none  &kp A  &kp R  &kp S        &ht_k LSHFT T  &kp D                  &kp H        &ht_k LSHFT N  &kp E        &kp I  &kp O          &none
 &none  &kp Q  &kp Z  &kp C        &kp V          &kp B                  &kp K        &kp M          &kp X        &dot   &kp SEMICOLON  &none
-                     &ht_lyr 4 4  &ht_lyr 1 4    &ht_ctl LCTRL LCTRL    &ht_lyr 1 4  &lt 3 SPACE    &ht_lyr 4 4
+                     &ht_lyr 3 3  &ht_lyr 1 4    &ht_ctl LCTRL LCTRL    &ht_lyr 1 4  &lt 2 SPACE    &ht_lyr 3 3
             >;
         };
 
@@ -186,7 +186,7 @@
 &none  &none         &kp ESC         &caps_word    &as LA(LSHFT)  &kp LC(TAB)      &kp LS(LC(TAB))  &sk LEFT_META            &sret          &kp END   &kp HOME  &none
 &none  &kp LEFT      &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT      &kp RMETA        &kp TAB          &kp RET                  &kp LC(BSPC)   &kp BSPC  &endRet   &none
 &none  &kp LC(LEFT)  &kp LC(DOWN)    &kp LC(UP)    &kp LC(RIGHT)  &kp LA(SPACE)    &kp DELETE       &kp LG(LS(PRINTSCREEN))  &kp LC(LA(T))  &none     &none     &none
-                                     &kp LEFT_GUI  &mo 4          &none            &none            &mo 4                    &kp RIGHT_ALT
+                                     &kp LEFT_GUI  &to 4          &to 0            &to 0            &to 4                    &kp RIGHT_ALT
             >;
         };
 
