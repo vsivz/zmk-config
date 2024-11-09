@@ -75,21 +75,21 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TDTH";
             #binding-cells = <0>;
-            bindings = <&lt 2 SPACE>, <&ht_lyr 1 4>;
+            bindings = <&lt 3 SPACE>, <&ht_lyr 1 4>;
         };
 
         sy_mt: sy_mt {
             compatible = "zmk,behavior-tap-dance";
             label = "SY_MT";
             #binding-cells = <0>;
-            bindings = <&ht_lyr 3 3>, <&kp LEFT_META>;
+            bindings = <&ht_lyr 4 4>, <&kp LEFT_META>;
         };
 
         sy_ra: sy_ra {
             compatible = "zmk,behavior-tap-dance";
             label = "SY_RA";
             #binding-cells = <0>;
-            bindings = <&ht_lyr 3 3>, <&kp RALT>;
+            bindings = <&ht_lyr 4 4>, <&kp RALT>;
         };
     };
 
@@ -141,10 +141,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&none          &none  &kp W  &kp F        &kp P          &kp G                  &kp J        &kp L          &kp U        &kp Y  &none          &none
-&mo 4          &kp A  &kp R  &kp S        &ht_k LSHFT T  &kp D                  &kp H        &ht_k LSHFT N  &kp E        &kp I  &kp O          &mo 4
-&kp LEFT_META  &kp Q  &kp Z  &kp C        &kp V          &kp B                  &kp K        &kp M          &kp X        &dot   &kp SEMICOLON  &kp RIGHT_ALT
-                             &ht_lyr 3 3  &ht_lyr 1 4    &ht_ctl LCTRL LCTRL    &ht_lyr 1 4  &lt 2 SPACE    &ht_lyr 3 3
+&none  &none  &kp W  &kp F        &kp P          &kp G                  &kp J        &kp L          &kp U        &kp Y  &none          &none
+&none  &kp A  &kp R  &kp S        &ht_k LSHFT T  &kp D                  &kp H        &ht_k LSHFT N  &kp E        &kp I  &kp O          &none
+&none  &kp Q  &kp Z  &kp C        &kp V          &kp B                  &kp K        &kp M          &kp X        &dot   &kp SEMICOLON  &none
+                     &ht_lyr 4 4  &ht_lyr 1 4    &ht_ctl LCTRL LCTRL    &ht_lyr 1 4  &lt 3 SPACE    &ht_lyr 4 4
             >;
         };
 
@@ -156,10 +156,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&none  &kp DOT  &kp MINUS       &kp LS(PLUS)  &kp LS(UNDER)  &none            &none      &to 5          &to 6     &none   &kp COLON  &none
-&none  &kp N0   &kp N1          &kp N2        &kp N3         &kp N4           &kp N5     &kp N6         &kp N7    &kp N8  &kp N9     &none
-&none  &none    &kp LEFT_ARROW  &kp RIGHT     &kp DELETE     &kp BACKSPACE    &kp FSLH   &kp LA(SPACE)  &kp X     &dot    &none      &none
-                                &kp LGUI      &none          &kp SPACE        &kp SPACE  &none          &kp RALT
+&none  &kp DOT  &kp MINUS       &kp LS(PLUS)  &kp LS(UNDER)  &none            &none      &to 5          &to 6   &none   &kp COLON  &none
+&none  &kp N0   &kp N1          &kp N2        &kp N3         &kp N4           &kp N5     &kp N6         &kp N7  &kp N8  &kp N9     &none
+&none  &none    &kp LEFT_ARROW  &kp RIGHT     &kp DELETE     &kp BACKSPACE    &kp FSLH   &kp LA(SPACE)  &kp X   &dot    &none      &none
+                                &none         &none          &kp SPACE        &kp SPACE  &none          &none
             >;
         };
 
@@ -184,9 +184,9 @@
         functions {
             bindings = <
 &none  &none         &kp ESC         &caps_word    &as LA(LSHFT)  &kp LC(TAB)      &kp LS(LC(TAB))  &sk LEFT_META            &sret          &kp END   &kp HOME  &none
-&none  &kp LEFT      &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT      &kp RMETA        &kp TAB          &kp RET                  &kp LC(BSPC)   &kp BSPC  &endRet   &kp RET
+&none  &kp LEFT      &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT      &kp RMETA        &kp TAB          &kp RET                  &kp LC(BSPC)   &kp BSPC  &endRet   &none
 &none  &kp LC(LEFT)  &kp LC(DOWN)    &kp LC(UP)    &kp LC(RIGHT)  &kp LA(SPACE)    &kp DELETE       &kp LG(LS(PRINTSCREEN))  &kp LC(LA(T))  &none     &none     &none
-                                     &none         &none          &none            &none            &none                    &none
+                                     &kp LEFT_GUI  &mo 4          &none            &none            &mo 4                    &kp RIGHT_ALT
             >;
         };
 
@@ -195,16 +195,16 @@
 &kp TAB    &kp Q  &kp W  &kp E  &kp R      &kp T        &kp Y      &kp U     &kp I      &kp O    &kp P     &kp BSPC
 &kp CAPS   &kp A  &kp S  &kp D  &kp F      &kp G        &kp H      &kp J     &kp K      &kp L    &kp SEMI  &kp ENTER
 &kp LSHFT  &kp Z  &kp X  &kp C  &kp V      &kp B        &kp N      &kp M     &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
-                         &to 0  &kp LCTRL  &kp SPACE    &kp SPACE  &kp LALT  &trans
+                         &to 0  &kp LCTRL  &kp SPACE    &kp SPACE  &kp LALT  &kp LMETA
             >;
         };
 
         annotation {
             bindings = <
-&trans  &kp N4  &kp N5  &kp N6     &kp N7     &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp N0  &kp N1  &kp N2     &kp N3     &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp N8  &kp N9  &kp LC(Z)  &kp LC(Y)  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                        &to 0      &trans     &trans    &trans  &trans  &trans
+&none  &kp N4  &kp N5  &kp N6     &kp N7     &none    &none  &none  &none  &none  &none  &none
+&none  &kp N0  &kp N1  &kp N2     &kp N3     &none    &none  &none  &none  &none  &none  &none
+&none  &kp N8  &kp N9  &kp LC(Z)  &kp LC(Y)  &none    &none  &none  &none  &none  &none  &none
+                       &to 0      &none      &none    &none  &none  &none
             >;
         };
     };
