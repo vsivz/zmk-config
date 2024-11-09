@@ -213,7 +213,7 @@
 &none  &none         &kp ESC         &caps_word    &as LA(LSHFT)  &kp LC(TAB)      &kp LS(LC(TAB))  &sk LEFT_META            &sret          &kp END   &kp HOME  &none
 &none  &kp LEFT      &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT      &kp RMETA        &kp TAB          &kp RET                  &kp LC(BSPC)   &kp BSPC  &endRet   &none
 &none  &kp LC(LEFT)  &kp LC(DOWN)    &kp LC(UP)    &kp LC(RIGHT)  &kp LA(SPACE)    &kp DELETE       &kp LG(LS(PRINTSCREEN))  &kp LC(LA(T))  &none     &none     &none
-                                     &kp LEFT_GUI  &none          &none            &none            &none                    &kp RIGHT_ALT
+                                     &kp LEFT_GUI  &to 4          &none            &none            &to 4                    &kp RIGHT_ALT
             >;
         };
     };
