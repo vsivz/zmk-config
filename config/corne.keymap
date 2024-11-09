@@ -159,7 +159,7 @@
 &none  &kp DOT  &kp MINUS       &kp LS(PLUS)  &kp LS(UNDER)  &none            &none      &to 5          &to 6   &none   &kp COLON  &none
 &none  &kp N0   &kp N1          &kp N2        &kp N3         &kp N4           &kp N5     &kp N6         &kp N7  &kp N8  &kp N9     &none
 &none  &none    &kp LEFT_ARROW  &kp RIGHT     &kp DELETE     &kp BACKSPACE    &kp FSLH   &kp LA(SPACE)  &kp X   &dot    &none      &none
-                                &none         &none          &kp SPACE        &kp SPACE  &none          &none
+                                &none         &to 0          &kp SPACE        &kp SPACE  &to 0          &none
             >;
         };
 
@@ -186,7 +186,7 @@
 &none  &none         &kp ESC         &caps_word    &as LA(LSHFT)  &kp LC(TAB)      &kp LS(LC(TAB))  &sk LEFT_META            &sret          &kp END   &kp HOME  &none
 &none  &kp LEFT      &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT      &kp RMETA        &kp TAB          &kp RET                  &kp LC(BSPC)   &kp BSPC  &endRet   &none
 &none  &kp LC(LEFT)  &kp LC(DOWN)    &kp LC(UP)    &kp LC(RIGHT)  &kp LA(SPACE)    &kp DELETE       &kp LG(LS(PRINTSCREEN))  &kp LC(LA(T))  &none     &none     &none
-                                     &kp LEFT_GUI  &to 7          &to 0            &to 0            &to 7                    &kp RIGHT_ALT
+                                     &kp LEFT_GUI  &to 7          &to 1            &to 1            &to 7                    &kp RIGHT_ALT
             >;
         };
 
@@ -213,7 +213,7 @@
 &none  &none         &kp ESC         &caps_word    &as LA(LSHFT)  &kp LC(TAB)      &kp LS(LC(TAB))  &sk LEFT_META            &sret          &kp END   &kp HOME  &none
 &none  &kp LEFT      &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT      &kp RMETA        &kp TAB          &kp RET                  &kp LC(BSPC)   &kp BSPC  &endRet   &none
 &none  &kp LC(LEFT)  &kp LC(DOWN)    &kp LC(UP)    &kp LC(RIGHT)  &kp LA(SPACE)    &kp DELETE       &kp LG(LS(PRINTSCREEN))  &kp LC(LA(T))  &none     &none     &none
-                                     &kp LEFT_GUI  &to 4          &none            &none            &to 4                    &kp RIGHT_ALT
+                                     &kp LEFT_GUI  &to 0          &none            &none            &to 0                    &kp RIGHT_ALT
             >;
         };
     };
