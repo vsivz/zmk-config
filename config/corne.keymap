@@ -144,6 +144,15 @@
         };
     };
 
+    combos {
+        compatible = "zmk,combos";
+
+        chatgpt {
+            bindings = <&kp LC(LS(LG(D)))>;
+            key-positions = <16 19>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
