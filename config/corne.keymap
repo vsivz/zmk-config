@@ -188,10 +188,10 @@
 
         symbols {
             bindings = <
-&none  &kp GRAVE      &kp AMPERSAND    &kp ASTRK  &kp TILDE          &kp QUESTION    &kp BSLH  &kp PIPE   &kp LEFT_BRACE        &kp RIGHT_BRACE        &none             &none
-&none  &kp PERCENT    &kp UNDER        &kp CARET  &kp APOSTROPHE     &kp EQUAL       &kp PLUS  &kp MINUS  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp DOLLAR        &none
-&none  &kp LESS_THAN  &kp EXCLAMATION  &kp AT     &kp DOUBLE_QUOTES  &kp GRAVE       &kp FSLH  &kp HASH   &kp LBKT              &kp RBKT               &kp GREATER_THAN  &none
-                                       &none      &none              &none           &none     &none      &none
+&none  &kp GRAVE      &kp AMPERSAND    &kp ASTRK    &kp TILDE          &kp QUESTION    &kp BSLH  &kp PIPE   &kp LEFT_BRACE        &kp RIGHT_BRACE        &none             &none
+&none  &kp PERCENT    &kp UNDER        &kp CARET    &kp APOSTROPHE     &kp EQUAL       &kp PLUS  &kp MINUS  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp DOLLAR        &none
+&none  &kp LESS_THAN  &kp EXCLAMATION  &kp AT       &kp DOUBLE_QUOTES  &kp GRAVE       &kp FSLH  &kp HASH   &kp LBKT              &kp RBKT               &kp GREATER_THAN  &none
+                                       &ht_lyr 8 8  &none              &none           &none     &none      &ht_lyr 8 8
             >;
         };
 
@@ -233,10 +233,10 @@
 
         system {
             bindings = <
-&none  &kp F1   &kp F2   &kp F3  &kp F4  &kp F5    &kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &none
-&none  &none    &none    &none   &none   &none     &none   &none   &none   &none   &none    &none
-&none  &kp F11  &kp F12  &none   &none   &none     &none   &none   &none   &none   &none    &none
-                         &none   &none   &none     &none   &none   &none
+&none  &kp F1      &kp F2      &kp F3           &kp F4             &kp F5    &kp F6  &kp F7           &kp F8              &kp F9                    &kp F10                   &none
+&none  &kp K_MUTE  &kp K_PREV  &kp K_NEXT       &kp K_PLAY_PAUSE   &none     &none   &kp C_REWIND     &kp C_FAST_FORWARD  &kp C_BRI_INC             &kp C_BRI_DEC             &none
+&none  &kp F11     &kp F12     &kp C_VOLUME_UP  &kp C_VOLUME_DOWN  &none     &none   &kp K_SCROLL_UP  &kp K_SCROLL_DOWN   &kp C_BRIGHTNESS_MINIMUM  &kp C_BRIGHTNESS_MAXIMUM  &none
+                               &none            &none              &none     &none   &none            &none
             >;
         };
     };
