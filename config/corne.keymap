@@ -128,6 +128,20 @@
             bindings = <&kp HOME &kp HOME &kp LS(END) &kp DEL>;
             label = "DLLN";
         };
+
+        sw1: sw1 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(LG(LEFT_ARROW)) &kp LG(LA(H)) &kp LS(LG(RIGHT))>;
+            label = "SW1";
+        };
+
+        sw2: sw2 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(LG(RIGHT)) &kp LA(LG(H)) &kp LS(LG(LEFT_ARROW))>;
+            label = "SW2";
+        };
     };
 
     keymap {
