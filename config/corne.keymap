@@ -179,7 +179,7 @@
 
         navigation {
             bindings = <
-&none  &none               &kp LG(LC(LS(T)))  &kp LG(LC(LS(Q)))   &kp LG(RET)    &af4                 &dlln                 &none              &none              &none                   &none              &none
+&none  &none               &kp LG(LC(LS(T)))  &kp LG(LC(LS(Q)))   &kp LG(RET)    &af4                 &dlln                 &none              &none              &sw2                    &sw1               &none
 &none  &kp LG(LC(LS(J)))   &kp LS(LC(LG(H)))  &kp LG(LA(J))       &kp LA(LG(H))  &kp LG(LC(LS(R)))    &kp LG(LC(UP_ARROW))  &kp LS(LC(LG(Z)))  &kp LG(LC(RIGHT))  &kp LG(LS(LEFT_ARROW))  &kp LS(LG(RIGHT))  &none
 &none  &kp LG(DOWN_ARROW)  &kp LG(UP_ARROW)   &kp LG(LEFT_ARROW)  &kp LG(RIGHT)  &none                &cpln                 &kp LC(HOME)       &kp LC(END)        &none                   &none              &none
                                               &none               &none          &none                &none                 &none              &none
