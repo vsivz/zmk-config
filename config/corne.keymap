@@ -153,14 +153,14 @@
         toFunc: toFunc {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp F22 &to 4 &tog 9>;
+            bindings = <&kp F22 &to 4 &tog 8>;
             label = "TOFUNC";
         };
 
         leave_func: leave_func {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&tog 9 &to 0>;
+            bindings = <&tog 8 &to 0>;
             label = "LEAVE_FUNC";
         };
     };
@@ -223,7 +223,7 @@
 &none  &kp GRAVE      &kp AMPERSAND    &kp ASTRK    &kp TILDE          &kp QUESTION    &kp BSLH  &kp PIPE   &kp LEFT_BRACE        &kp RIGHT_BRACE        &none             &none
 &none  &kp PERCENT    &kp UNDER        &kp CARET    &kp APOSTROPHE     &kp EQUAL       &kp PLUS  &kp MINUS  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp DOLLAR        &none
 &none  &kp LESS_THAN  &kp EXCLAMATION  &kp AT       &kp DOUBLE_QUOTES  &kp GRAVE       &kp FSLH  &kp HASH   &kp LBKT              &kp RBKT               &kp GREATER_THAN  &none
-                                       &ht_lyr 8 8  &none              &none           &none     &none      &ht_lyr 8 8
+                                       &ht_lyr 7 7  &none              &none           &none     &none      &ht_lyr 7 7
             >;
         };
 
@@ -251,15 +251,6 @@
 &none  &kp N0  &kp N1  &kp N2     &kp N3     &none    &none  &none  &none  &none  &none  &none
 &none  &kp N8  &kp N9  &kp LC(Z)  &kp LC(Y)  &none    &none  &none  &none  &none  &none  &none
                        &to 0      &none      &none    &none  &none  &none
-            >;
-        };
-
-        functions2 {
-            bindings = <
-&none  &none         &kp ESC         &caps_word    &as LA(LSHFT)  &kp LC(TAB)      &kp LS(LC(TAB))  &sk LEFT_META            &sret          &kp END   &kp HOME  &none
-&none  &kp LEFT      &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT      &kp RMETA        &kp TAB          &kp RET                  &kp LC(BSPC)   &kp BSPC  &endRet   &none
-&none  &kp LC(LEFT)  &kp LC(DOWN)    &kp LC(UP)    &kp LC(RIGHT)  &kp LA(SPACE)    &kp DELETE       &kp LG(LS(PRINTSCREEN))  &kp LC(LA(T))  &none     &none     &none
-                                     &kp LEFT_GUI  &to 0          &none            &none            &to 0                    &kp RIGHT_ALT
             >;
         };
 
