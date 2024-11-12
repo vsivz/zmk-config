@@ -146,7 +146,7 @@
         capsword: capsword {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&caps_word &kp F22>;
+            bindings = <&kp F22 &caps_word>;
             label = "CAPSWORD";
         };
 
