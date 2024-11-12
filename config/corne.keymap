@@ -142,6 +142,27 @@
             bindings = <&kp LS(LG(RIGHT)) &kp LA(LG(H)) &kp LS(LG(LEFT_ARROW))>;
             label = "SW2";
         };
+
+        capsword: capsword {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&caps_word &kp F22>;
+            label = "CAPSWORD";
+        };
+
+        toFunc: toFunc {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp F22 &to 4 &tog 9>;
+            label = "TOFUNC";
+        };
+
+        leave_func: leave_func {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&tog 9 &to 0>;
+            label = "LEAVE_FUNC";
+        };
     };
 
     combos {
@@ -150,6 +171,8 @@
         chatgpt {
             bindings = <&kp LC(LS(LG(D)))>;
             key-positions = <16 19>;
+            require-prior-idle-ms = <0>;
+            timeout-ms = <30>;
         };
     };
 
@@ -206,10 +229,10 @@
 
         functions {
             bindings = <
-&none  &none         &kp ESC         &caps_word    &as LA(LSHFT)  &kp LC(LS(TAB))    &kp LC(TAB)  &sk LEFT_META            &sret          &kp END   &kp HOME  &none
+&none  &none         &kp ESC         &capsword     &as LA(LSHFT)  &kp LC(LS(TAB))    &kp LC(TAB)  &sk LEFT_META            &sret          &kp END   &kp HOME  &none
 &none  &kp LEFT      &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT      &kp LS(TAB)        &kp TAB      &kp RET                  &kp LC(BSPC)   &kp BSPC  &endRet   &none
 &none  &kp LC(LEFT)  &kp LC(DOWN)    &kp LC(UP)    &kp LC(RIGHT)  &kp LA(SPACE)      &kp DELETE   &kp LG(LS(PRINTSCREEN))  &kp LC(LA(T))  &none     &kp CLCK  &none
-                                     &kp LEFT_GUI  &to 7          &to 1              &to 1        &to 7                    &kp RIGHT_ALT
+                                     &kp LEFT_GUI  &toFunc        &to 1              &to 1        &toFunc                  &kp RIGHT_ALT
             >;
         };
 
@@ -246,6 +269,15 @@
 &none  &kp K_MUTE  &kp K_PREV  &kp K_NEXT       &kp K_PLAY_PAUSE   &none     &none   &kp C_REWIND     &kp C_FAST_FORWARD  &kp C_BRI_INC             &kp C_BRI_DEC             &none
 &none  &kp F11     &kp F12     &kp C_VOLUME_UP  &kp C_VOLUME_DOWN  &none     &none   &kp K_SCROLL_UP  &kp K_SCROLL_DOWN   &kp C_BRIGHTNESS_MINIMUM  &kp C_BRIGHTNESS_MAXIMUM  &none
                                &none            &none              &none     &none   &none            &none
+            >;
+        };
+
+        layer_9 {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans       &trans         &trans       &trans       &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans       &trans         &trans       &trans       &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans       &trans         &trans       &trans       &trans  &trans  &trans  &trans
+                        &trans  &leave_func  &leave_func    &leave_func  &leave_func  &trans
             >;
         };
     };
