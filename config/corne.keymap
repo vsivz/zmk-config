@@ -247,10 +247,10 @@
 
         annotation {
             bindings = <
-&none  &kp N4  &kp N5  &kp N6     &kp N7     &none    &none  &none  &none  &none  &none  &none
-&none  &kp N0  &kp N1  &kp N2     &kp N3     &none    &none  &none  &none  &none  &none  &none
-&none  &kp N8  &kp N9  &kp LC(Z)  &kp LC(Y)  &none    &none  &none  &none  &none  &none  &none
-                       &to 0      &none      &none    &none  &none  &none
+&none  &kp N4  &kp N5  &kp N6     &kp N7      &none           &none  &none  &none  &none  &none  &none
+&none  &kp N0  &kp N1  &kp N2     &kp N3      &kp NUMBER_4    &none  &none  &none  &none  &none  &none
+&none  &kp N8  &kp N9  &kp LC(Z)  &kp K_REDO  &kp LC(S)       &none  &none  &none  &none  &none  &none
+                       &to 0      &to 0       &none           &none  &none  &none
             >;
         };
 
