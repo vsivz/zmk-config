@@ -163,6 +163,132 @@
             bindings = <&tog 8 &to 0>;
             label = "LEAVE_FUNC";
         };
+
+        left3: left2 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT &kp LEFT_ARROW &kp LEFT_ARROW>;
+            label = "LEFT2";
+        };
+
+        left6: left6 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&left3 &left3>;
+            label = "LEFT6";
+        };
+
+        left9: left9 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&left3 &left3 &left3>;
+            label = "LEFT9";
+        };
+
+        c_left3: c_left3 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(LEFT) &kp LC(LEFT_ARROW) &kp LC(LEFT_ARROW)>;
+            label = "C_LEFT3";
+        };
+
+        c_left6: c_left6 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&c_left3 &c_left3>;
+            label = "C_LEFT6";
+        };
+
+        c_left9: c_left9 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&c_left3 &c_left3 &c_left3>;
+            label = "C_LEFT9";
+        };
+
+        right3: right3 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp RIGHT &kp RIGHT &kp RIGHT>;
+            label = "RIGHT3";
+        };
+
+        right6: right6 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&right3 &right3>;
+            label = "RIGHT6";
+        };
+
+        right9: right9 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&right3 &right3 &right3>;
+            label = "RIGHT9";
+        };
+
+        c_right3: c_right3 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(RIGHT) &kp LC(RIGHT) &kp LC(RIGHT)>;
+            label = "C_RIGHT3";
+        };
+
+        c_right6: c_right6 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&c_right3 &c_right3>;
+            label = "C_RIGHT6";
+        };
+
+        c_right9: c_right9 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&c_right3 &c_right3 &c_right3>;
+            label = "C_RIGHT9";
+        };
+
+        down2: down2 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp DOWN &kp DOWN_ARROW>;
+            label = "DOWN2";
+        };
+
+        down4: down4 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&down2 &down2>;
+            label = "DOWN4";
+        };
+
+        down6: down6 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&down2 &down2 &down2>;
+            label = "DOWN6";
+        };
+
+        up2: up2 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp UP &kp UP>;
+            label = "UP2";
+        };
+
+        up4: up4 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&up2 &up2>;
+            label = "UP4";
+        };
+
+        up6: up6 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&up2 &up2 &up2>;
+            label = "UP6";
+        };
     };
 
     combos { compatible = "zmk,combos"; };
@@ -254,12 +380,21 @@
             >;
         };
 
-        layer_9 {
+        func_helper {
             bindings = <
 &trans  &trans  &trans  &trans  &trans       &trans         &trans       &trans       &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans       &trans         &trans       &trans       &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans       &trans         &trans       &trans       &trans  &trans  &trans  &trans
                         &trans  &leave_func  &leave_func    &leave_func  &leave_func  &trans
+            >;
+        };
+
+        arrow {
+            bindings = <
+&none  &none  &down2    &down4    &down6    &none    &none  &up6       &up4       &up2       &none  &none
+&none  &none  &left3    &left6    &left9    &none    &none  &right9    &right6    &right3    &none  &none
+&none  &none  &c_left3  &c_left6  &c_left9  &none    &none  &c_right9  &c_right6  &c_right3  &none  &none
+                        &none     &none     &none    &none  &none      &none
             >;
         };
     };
