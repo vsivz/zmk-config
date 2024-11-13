@@ -91,6 +91,13 @@
             #binding-cells = <0>;
             bindings = <&ht_lyr 4 4>, <&kp RALT>;
         };
+
+        lyr3_ctl: lyr3_ctl {
+            compatible = "zmk,behavior-tap-dance";
+            label = "LYR3_CTL";
+            #binding-cells = <0>;
+            bindings = <&ht_lyr 3 3>, <&ht_ctl LCTRL LCTRL>;
+        };
     };
 
     macros {
@@ -353,10 +360,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp LS(LC(LG(D)))  &none  &kp W  &kp F        &kp P          &kp G                  &kp J        &kp L          &kp U        &kp Y  &none          &none
-&none              &kp A  &kp R  &kp S        &ht_k LSHFT T  &kp D                  &kp H        &ht_k LSHFT N  &kp E        &kp I  &kp O          &none
-&none              &kp Q  &kp Z  &kp C        &kp V          &kp B                  &kp K        &kp M          &kp X        &dot   &kp SEMICOLON  &none
-                                 &ht_lyr 3 3  &ht_lyr 1 4    &ht_ctl LCTRL LCTRL    &ht_lyr 1 4  &lt 2 SPACE    &ht_lyr 3 3
+&kp LS(LC(LG(D)))  &none  &kp W  &kp F        &kp P          &kp G                  &kp J        &kp L          &kp U      &kp Y  &none          &none
+&none              &kp A  &kp R  &kp S        &ht_k LSHFT T  &kp D                  &kp H        &ht_k LSHFT N  &kp E      &kp I  &kp O          &none
+&none              &kp Q  &kp Z  &kp C        &kp V          &kp B                  &kp K        &kp M          &kp X      &dot   &kp SEMICOLON  &none
+                                 &ht_lyr 3 3  &ht_lyr 1 4    &ht_ctl LCTRL LCTRL    &ht_lyr 1 4  &lt 2 SPACE    &lyr3_ctl
             >;
         };
 
