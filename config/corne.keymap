@@ -118,14 +118,14 @@
         cpln: cpln {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp HOME &kp HOME &kp HOME &kp LS(END) &kp LC(C) &kp END>;
+            bindings = <&kp HOME &kp HOME &kp HOME &kp LS(END) &kp LS(END) &kp LS(END) &kp LC(C) &kp END>;
             label = "CPLN";
         };
 
         dlln: dlln {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp HOME &kp HOME &kp LS(END) &kp DEL>;
+            bindings = <&kp HOME &kp HOME &kp LS(END) &kp LS(END) &kp DEL>;
             label = "DLLN";
         };
 
