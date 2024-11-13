@@ -397,7 +397,7 @@
             bindings = <
 &none  &none         &kp ESC         &capsword     &as LA(LSHFT)  &kp LC(LS(TAB))    &kp LC(TAB)  &sk LEFT_META            &sret          &kp END   &kp HOME  &none
 &none  &kp LEFT      &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT      &kp LS(TAB)        &kp TAB      &kp RET                  &kp LC(BSPC)   &kp BSPC  &endRet   &none
-&none  &kp LC(LEFT)  &kp LC(DOWN)    &kp LC(UP)    &kp LC(RIGHT)  &kp LA(SPACE)      &kp DELETE   &kp LG(LS(PRINTSCREEN))  &kp LC(LA(T))  &none     &kp CLCK  &none
+&none  &kp LC(LEFT)  &kp LC(DOWN)    &kp LC(UP)    &kp LC(RIGHT)  &kp LA(SPACE)      &kp DELETE   &kp LG(LS(PRINTSCREEN))  &kp LC(LA(T))  &kp LALT  &kp CLCK  &none
                                      &kp LEFT_GUI  &toFunc        &to 1              &to 1        &toFunc                  &kp RIGHT_ALT
             >;
         };
