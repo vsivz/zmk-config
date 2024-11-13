@@ -289,9 +289,58 @@
             bindings = <&up2 &up2 &up2>;
             label = "UP6";
         };
+
+        on_MTab: on_MTab {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kt LEFT_META &tog 10 &kp TAB>;
+            label = "ON_MTAB";
+        };
+
+        on_MSTab: on_MSTab {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kt LEFT_META &tog 10 &kp LS(TAB)>;
+            label = "ON_MSTAB";
+        };
+
+        off_MTab: off_MTab {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kt LEFT_META &tog 10>;
+            label = "OFF_MTAB";
+        };
+
+        STab_2: STab_2 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(TAB) &kp LS(TAB)>;
+            label = "STAB_2";
+        };
+
+        Tab_2: Tab_2 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp TAB &kp TAB>;
+            label = "TAB_2";
+        };
     };
 
-    combos { compatible = "zmk,combos"; };
+    combos {
+        compatible = "zmk,combos";
+
+        arrowToggle {
+            bindings = <&tog 9>;
+            key-positions = <15 16>;
+            layers = <4 9>;
+        };
+
+        arrowToggle2 {
+            bindings = <&tog 9>;
+            key-positions = <19 20>;
+            layers = <4 9>;
+        };
+    };
 
     keymap {
         compatible = "zmk,keymap";
@@ -328,9 +377,9 @@
 
         navigation {
             bindings = <
-&none  &none               &kp LG(LC(LS(T)))  &kp LG(LC(LS(Q)))   &kp LG(RET)    &af4                 &dlln                 &none              &kp LG(H)          &sw2                    &sw1               &none
+&none  &none               &kp LG(LC(LS(T)))  &kp LG(LC(LS(Q)))   &kp LG(RET)    &af4                 &on_MSTab             &on_MTab           &kp LG(H)          &sw2                    &sw1               &none
 &none  &kp LG(LC(LS(J)))   &kp LS(LC(LG(H)))  &kp LG(LA(J))       &kp LA(LG(H))  &kp LG(LC(LS(R)))    &kp LG(LC(UP_ARROW))  &kp LS(LC(LG(Z)))  &kp LG(LC(RIGHT))  &kp LG(LS(LEFT_ARROW))  &kp LS(LG(RIGHT))  &none
-&none  &kp LG(DOWN_ARROW)  &kp LG(UP_ARROW)   &kp LG(LEFT_ARROW)  &kp LG(RIGHT)  &none                &cpln                 &kp LC(HOME)       &kp LC(END)        &none                   &none              &none
+&none  &kp LG(DOWN_ARROW)  &kp LG(UP_ARROW)   &kp LG(LEFT_ARROW)  &kp LG(RIGHT)  &none                &cpln                 &dlln              &kp LC(END)        &kp LC(HOME)            &none              &none
                                               &none               &none          &none                &none                 &none              &none
             >;
         };
@@ -395,6 +444,15 @@
 &none  &none  &left3    &left6    &left9    &none    &none  &right9    &right6    &right3    &none  &none
 &none  &none  &c_left3  &c_left6  &c_left9  &none    &none  &c_right9  &c_right6  &c_right3  &none  &none
                         &none     &none     &none    &none  &none      &none
+            >;
+        };
+
+        tab_helper {
+            bindings = <
+&trans  &trans  &trans  &trans     &trans     &trans       &kp LS(TAB)  &kp TAB    &trans     &trans  &trans  &trans
+&trans  &trans  &trans  &trans     &trans     &trans       &STab_2      &Tab_2     &trans     &trans  &trans  &trans
+&trans  &trans  &trans  &trans     &trans     &trans       &trans       &trans     &trans     &trans  &trans  &trans
+                        &off_MTab  &off_MTab  &off_MTab    &off_MTab    &off_MTab  &off_MTab
             >;
         };
     };
