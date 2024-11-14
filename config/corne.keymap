@@ -60,7 +60,7 @@
 
             #binding-cells = <2>;
             tapping-term-ms = <185>;
-            flavor = "balanced";
+            flavor = "hold-preferred";
         };
 
         as: as {
@@ -360,10 +360,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp LS(LC(LG(D)))  &none  &kp W  &kp F        &kp P          &kp G                  &kp J        &kp L          &kp U      &kp Y  &none          &none
-&none              &kp A  &kp R  &kp S        &ht_k LSHFT T  &kp D                  &kp H        &ht_k LSHFT N  &kp E      &kp I  &kp O          &none
-&none              &kp Q  &kp Z  &kp C        &kp V          &kp B                  &kp K        &kp M          &kp X      &dot   &kp SEMICOLON  &none
-                                 &ht_lyr 3 3  &ht_lyr 1 4    &ht_ctl LCTRL LCTRL    &ht_lyr 1 4  &lt 2 SPACE    &lyr3_ctl
+&kp LS(LC(LG(D)))  &none  &kp W  &kp F        &kp P          &kp G                  &kp J        &kp L          &kp U        &kp Y  &none          &none
+&none              &kp A  &kp R  &kp S        &ht_k LSHFT T  &kp D                  &kp H        &ht_k LSHFT N  &kp E        &kp I  &kp O          &none
+&none              &kp Q  &kp Z  &kp C        &kp V          &kp B                  &kp K        &kp M          &kp X        &dot   &kp SEMICOLON  &none
+                                 &ht_lyr 3 3  &ht_lyr 1 4    &ht_ctl LCTRL LCTRL    &ht_lyr 1 4  &lt 2 SPACE    &ht_lyr 3 3
             >;
         };
 
@@ -393,10 +393,10 @@
 
         symbols {
             bindings = <
-&none  &kp GRAVE      &kp AMPERSAND    &kp ASTRK    &kp TILDE          &kp QUESTION    &kp BSLH  &kp PIPE   &kp LEFT_BRACE        &kp RIGHT_BRACE        &none             &none
-&none  &kp PERCENT    &kp UNDER        &kp CARET    &kp APOSTROPHE     &kp EQUAL       &kp PLUS  &kp MINUS  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp DOLLAR        &none
-&none  &kp LESS_THAN  &kp EXCLAMATION  &kp AT       &kp DOUBLE_QUOTES  &kp GRAVE       &kp FSLH  &kp HASH   &kp LBKT              &kp RBKT               &kp GREATER_THAN  &none
-                                       &ht_lyr 7 7  &none              &none           &none     &none      &ht_lyr 7 7
+&none  &kp GRAVE      &kp AMPERSAND    &kp ASTRK  &kp TILDE          &kp QUESTION    &kp BSLH  &kp PIPE     &kp LEFT_BRACE        &kp RIGHT_BRACE        &none             &none
+&none  &kp PERCENT    &kp UNDER        &kp CARET  &kp APOSTROPHE     &kp EQUAL       &kp PLUS  &kp MINUS    &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp DOLLAR        &none
+&none  &kp LESS_THAN  &kp EXCLAMATION  &kp AT     &kp DOUBLE_QUOTES  &kp GRAVE       &kp FSLH  &kp HASH     &kp LBKT              &kp RBKT               &kp GREATER_THAN  &none
+                                       &none      &ht_lyr 7 7        &none           &none     &ht_lyr 7 7  &ht_ctl LCTRL LCTRL
             >;
         };
 
