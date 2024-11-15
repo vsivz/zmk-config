@@ -98,6 +98,48 @@
             #binding-cells = <0>;
             bindings = <&ht_lyr 3 3>, <&ht_ctl LCTRL LCTRL>;
         };
+
+        left_hrm: left_hrm {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LEFT_HRM";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <150>;
+            hold-trigger-key-positions = <1 2 13 25 26 14 3 27 15 4 16 28>;
+            bindings = <&kp>, <&kp>;
+        };
+
+        right_hrm: right_hrm {
+            compatible = "zmk,behavior-hold-tap";
+            label = "RIGHT_HRM";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <150>;
+            flavor = "balanced";
+            hold-trigger-key-positions = <7 8 9 10 19 20 21 22 31 32 33 34>;
+        };
+
+        left_hrm2: left_hrm2 {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LEFT_HRM2";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <150>;
+            hold-trigger-key-positions = <1 2 13 25 26 14 3 27 15 4 16 28>;
+            bindings = <&mo>, <&kp>;
+        };
+
+        right_hrm2: right_hrm2 {
+            compatible = "zmk,behavior-hold-tap";
+            label = "RIGHT_HRM2";
+            bindings = <&mo>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <150>;
+            flavor = "balanced";
+            hold-trigger-key-positions = <7 8 9 10 19 20 21 22 31 32 33 34>;
+        };
     };
 
     macros {
@@ -360,10 +402,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp LS(LC(LG(D)))  &none  &kp W  &kp F        &kp P          &kp G                  &kp J        &kp L          &kp U        &kp Y  &none          &none
-&none              &kp A  &kp R  &kp S        &ht_k LSHFT T  &kp D                  &kp H        &ht_k LSHFT N  &kp E        &kp I  &kp O          &none
-&none              &kp Q  &kp Z  &kp C        &kp V          &kp B                  &kp K        &kp M          &kp X        &dot   &kp SEMICOLON  &none
-                                 &ht_lyr 3 3  &ht_lyr 1 4    &ht_ctl LCTRL LCTRL    &ht_lyr 1 4  &lt 2 SPACE    &ht_lyr 3 3
+&kp LS(LC(LG(D)))  &none  &kp W           &kp F              &kp P              &kp G                  &kp J        &kp L               &kp U               &kp Y            &none          &none
+&none              &kp A  &left_hrm2 3 R  &left_hrm LCTRL S  &left_hrm LSHFT T  &kp D                  &kp H        &right_hrm LSHFT N  &right_hrm LCTRL E  &right_hrm2 3 I  &kp O          &none
+&none              &kp Q  &kp Z           &kp C              &kp V              &kp B                  &kp K        &kp M               &kp X               &dot             &kp SEMICOLON  &none
+                                          &ht_lyr 3 3        &ht_lyr 1 4        &ht_ctl LCTRL LCTRL    &ht_lyr 1 4  &lt 2 SPACE         &ht_lyr 3 3
             >;
         };
 
