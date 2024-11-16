@@ -554,19 +554,28 @@
 
         one_handed_0 {
             bindings = <
-&none  &none  &kp W  &kp F  &kp P      &kp G            &kp J          &kp L      &kp U  &kp Y  &none          &none
-&none  &kp A  &kp R  &kp S  &kp T      &kp D            &kp H          &kp N      &kp E  &kp I  &kp O          &none
-&none  &kp Q  &kp Z  &kp C  &kp V      &kp B            &kp K          &kp M      &kp X  &dot   &kp SEMICOLON  &none
-                     &to 0  &kp SPACE  &ht_lyr 14 14    &ht_lyr 14 14  &kp SPACE  &to 0
+&none              &kp BACKSPACE  &kp W  &kp F  &kp P      &kp G            &kp J          &kp L      &kp U  &kp Y  &kp ENTER      &none
+&ht_lyr 15 15      &kp A          &kp R  &kp S  &kp T      &kp D            &kp H          &kp N      &kp E  &kp I  &kp O          &ht_lyr 15 15
+&ht_k LSHFT LSHFT  &kp Q          &kp Z  &kp C  &kp V      &kp B            &kp K          &kp M      &kp X  &dot   &kp BACKSPACE  &ht_k LSHFT LSHFT
+                                         &to 0  &kp SPACE  &ht_lyr 14 14    &ht_lyr 14 14  &kp SPACE  &to 0
             >;
         };
 
         one_handed_1 {
             bindings = <
-&none  &kp J  &kp L  &kp U  &kp Y      &none        &none      &kp W      &kp F  &kp P  &kp G  &none
-&none  &kp H  &kp N  &kp E  &kp I      &kp O        &kp A      &kp R      &kp S  &kp T  &kp D  &none
-&none  &kp K  &kp M  &kp X  &dot       &kp SEMI     &kp Q      &kp Z      &kp C  &kp V  &kp B  &none
-                     &to 0  &kp SPACE  &kp SPACE    &kp SPACE  &kp SPACE  &to 0
+&none              &kp J  &kp L  &kp U  &kp Y      &kp ENTER        &kp BACKSPACE  &kp W      &kp F  &kp P  &kp G  &none
+&none              &kp H  &kp N  &kp E  &kp I      &kp O            &kp A          &kp R      &kp S  &kp T  &kp D  &none
+&ht_k LSHFT LSHFT  &kp K  &kp M  &kp X  &dot       &kp BACKSPACE    &kp Q          &kp Z      &kp C  &kp V  &kp B  &ht_k LSHFT LSHFT
+                                 &to 0  &kp SPACE  &kp SPACE        &kp SPACE      &kp SPACE  &to 0
+            >;
+        };
+
+        one_handed_3 {
+            bindings = <
+&trans  &trans  &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT    &trans  &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans
+&trans  &kp N0  &kp N1    &kp N2    &kp N3  &kp N4       &kp N0  &kp N1    &kp N2    &kp N3  &kp N4     &trans
+&trans  &kp N5  &kp N6    &kp N7    &kp N8  &kp N9       &kp N5  &kp N6    &kp N7    &kp N8  &kp N9     &trans
+                          &trans    &trans  &trans       &trans  &trans    &trans
             >;
         };
     };
