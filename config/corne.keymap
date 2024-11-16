@@ -545,10 +545,10 @@
 
         plaintext {
             bindings = <
-&none  &none  &kp W  &kp F  &kp P      &kp G    &kp J      &kp L      &kp U  &kp Y  &none          &none
-&none  &kp A  &kp R  &kp S  &kp T      &kp D    &kp H      &kp N      &kp E  &kp I  &kp O          &none
-&none  &kp Q  &kp Z  &kp C  &kp V      &kp B    &kp K      &kp M      &kp X  &dot   &kp SEMICOLON  &none
-                     &to 0  &kp SPACE  &sl 4    &kp SPACE  &kp SPACE  &to 0
+&none  &none  &kp W  &kp F  &kp P      &kp G          &kp J      &kp L      &kp U  &kp Y  &none          &none
+&none  &kp A  &kp R  &kp S  &kp T      &kp D          &kp H      &kp N      &kp E  &kp I  &kp O          &none
+&none  &kp Q  &kp Z  &kp C  &kp V      &kp B          &kp K      &kp M      &kp X  &dot   &kp SEMICOLON  &none
+                     &to 0  &kp SPACE  &ht_lyr 4 4    &kp SPACE  &kp SPACE  &to 0
             >;
         };
 
