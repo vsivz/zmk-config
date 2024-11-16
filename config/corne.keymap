@@ -34,15 +34,6 @@
             release-after-ms = <500>;
         };
 
-        lyr_num: lyr_num {
-            compatible = "zmk,behavior-hold-tap";
-            label = "LYR_NUM";
-            bindings = <&to>, <&nx_fn>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <160>;
-        };
-
         ht_lyr: ht_lyr {
             compatible = "zmk,behavior-hold-tap";
             label = "HT_LYR";
@@ -61,42 +52,6 @@
             #binding-cells = <2>;
             tapping-term-ms = <150>;
             flavor = "balanced";
-        };
-
-        as: as {
-            compatible = "zmk,behavior-sticky-key";
-            label = "AS";
-            bindings = <&kp>;
-            #binding-cells = <1>;
-            release-after-ms = <400>;
-        };
-
-        tdth: tdth {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TDTH";
-            #binding-cells = <0>;
-            bindings = <&lt 3 SPACE>, <&ht_lyr 1 4>;
-        };
-
-        sy_mt: sy_mt {
-            compatible = "zmk,behavior-tap-dance";
-            label = "SY_MT";
-            #binding-cells = <0>;
-            bindings = <&ht_lyr 4 4>, <&kp LEFT_META>;
-        };
-
-        sy_ra: sy_ra {
-            compatible = "zmk,behavior-tap-dance";
-            label = "SY_RA";
-            #binding-cells = <0>;
-            bindings = <&ht_lyr 4 4>, <&kp RALT>;
-        };
-
-        lyr3_ctl: lyr3_ctl {
-            compatible = "zmk,behavior-tap-dance";
-            label = "LYR3_CTL";
-            #binding-cells = <0>;
-            bindings = <&ht_lyr 3 3>, <&ht_ctl LCTRL LCTRL>;
         };
 
         left_hrm: left_hrm {
@@ -168,6 +123,15 @@
             bindings = <&on_MTab>, <&kp LG(TAB)>;
 
             tapping-term-ms = <150>;
+        };
+
+        ht_td_lyr: ht_td_lyr {
+            compatible = "zmk,behavior-tap-dance";
+            label = "HT_TD_LYR";
+            #binding-cells = <0>;
+            bindings = <&ht_lyr 1 4>, <&to 4>;
+
+            tapping-term-ms = <180>;
         };
     };
 
@@ -336,7 +300,7 @@
 &none  &none         &kp ESC         &capsword     &dlln          &kp LC(LS(TAB))    &kp LC(TAB)  &cpln                    &sret          &kp END   &kp HOME  &none
 &none  &kp LEFT      &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT      &kp LS(TAB)        &kp TAB      &kp RET                  &kp LC(BSPC)   &kp BSPC  &endRet   &none
 &none  &kp LC(LEFT)  &kp LC(DOWN)    &kp LC(UP)    &kp LC(RIGHT)  &kp LA(SPACE)      &kp DELETE   &kp LG(LS(PRINTSCREEN))  &kp LC(LA(T))  &kp HOME  &none     &none
-                                     &kp LMETA     &none          &toFunc            &toFunc      &none                    &kp RALT
+                                     &kp LMETA     &to 0          &toFunc            &toFunc      &none                    &kp RALT
             >;
         };
 
