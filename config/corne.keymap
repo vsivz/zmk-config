@@ -475,8 +475,8 @@
             bindings = <
 &none  &none         &kp ESC         &capsword     &dlln          &kp LC(LS(TAB))    &kp LC(TAB)  &cpln                    &sret          &kp END   &kp HOME  &none
 &none  &kp LEFT      &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT      &kp LS(TAB)        &kp TAB      &kp RET                  &kp LC(BSPC)   &kp BSPC  &endRet   &none
-&none  &kp LC(LEFT)  &kp LC(DOWN)    &kp LC(UP)    &kp LC(RIGHT)  &kp LA(SPACE)      &kp DELETE   &kp LG(LS(PRINTSCREEN))  &kp LC(LA(T))  &none     &none     &none
-                                     &kp LMETA     &toFunc        &toFunc            &toFunc      &toFunc                  &kp RALT
+&none  &kp LC(LEFT)  &kp LC(DOWN)    &kp LC(UP)    &kp LC(RIGHT)  &kp LA(SPACE)      &kp DELETE   &kp LG(LS(PRINTSCREEN))  &kp LC(LA(T))  &kp HOME  &none     &none
+                                     &kp LMETA     &none          &toFunc            &toFunc      &none                    &kp RALT
             >;
         };
 
@@ -501,8 +501,8 @@
         system {
             bindings = <
 &none  &kp F1      &kp F2      &kp F3           &kp F4             &kp F5    &kp F6  &kp F7        &kp F8              &kp F9                    &kp F10                   &none
-&none  &kp K_MUTE  &kp K_PREV  &kp K_NEXT       &kp K_PLAY_PAUSE   &to 12    &to 6   &kp C_REWIND  &kp C_FAST_FORWARD  &kp C_BRI_INC             &kp C_BRI_DEC             &none
-&none  &kp F11     &kp F12     &kp C_VOLUME_UP  &kp C_VOLUME_DOWN  &to 13    &to 5   &none         &none               &kp C_BRIGHTNESS_MINIMUM  &kp C_BRIGHTNESS_MAXIMUM  &none
+&none  &kp K_MUTE  &kp K_PREV  &kp K_NEXT       &kp K_PLAY_PAUSE   &to 12    &to 12  &kp C_REWIND  &kp C_FAST_FORWARD  &kp C_BRI_INC             &kp C_BRI_DEC             &none
+&none  &kp F11     &kp F12     &kp C_VOLUME_UP  &kp C_VOLUME_DOWN  &to 13    &to 13  &to 6         &to 5               &kp C_BRIGHTNESS_MINIMUM  &kp C_BRIGHTNESS_MAXIMUM  &none
                                &none            &none              &none     &none   &none         &none
             >;
         };
@@ -554,10 +554,10 @@
 
         one_handed_0 {
             bindings = <
-&none  &none  &kp W  &kp F  &kp P      &kp G            &kp J      &kp L      &kp U  &kp Y  &none          &none
-&none  &kp A  &kp R  &kp S  &kp T      &kp D            &kp H      &kp N      &kp E  &kp I  &kp O          &none
-&none  &kp Q  &kp Z  &kp C  &kp V      &kp B            &kp K      &kp M      &kp X  &dot   &kp SEMICOLON  &none
-                     &to 0  &kp SPACE  &ht_lyr 14 14    &kp SPACE  &kp SPACE  &to 0
+&none  &none  &kp W  &kp F  &kp P      &kp G            &kp J          &kp L      &kp U  &kp Y  &none          &none
+&none  &kp A  &kp R  &kp S  &kp T      &kp D            &kp H          &kp N      &kp E  &kp I  &kp O          &none
+&none  &kp Q  &kp Z  &kp C  &kp V      &kp B            &kp K          &kp M      &kp X  &dot   &kp SEMICOLON  &none
+                     &to 0  &kp SPACE  &ht_lyr 14 14    &ht_lyr 14 14  &kp SPACE  &to 0
             >;
         };
 
