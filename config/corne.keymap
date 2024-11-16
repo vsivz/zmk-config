@@ -422,10 +422,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp LS(LC(LG(D)))  &none  &kp W           &kp F               &kp P              &kp G          &kp J        &kp L               &kp U                &kp Y            &none          &none
-&none              &kp A  &left_hrm2 3 R  &left_hrm3 LCTRL S  &left_hrm LSHFT T  &kp D          &kp H        &right_hrm LSHFT N  &right_hrm3 LCTRL E  &right_hrm2 3 I  &kp O          &none
-&none              &kp Q  &kp Z           &kp C               &kp V              &kp B          &kp K        &kp M               &kp X                &dot             &kp SEMICOLON  &none
-                                          &none               &none              &ht_lyr 1 4    &ht_lyr 1 4  &lt 2 SPACE         &none
+&kp LS(LC(LG(D)))  &none  &kp W           &kp F               &kp P              &kp G    &kp J  &kp L               &kp U                &kp Y            &none          &none
+&none              &kp A  &left_hrm2 3 R  &left_hrm3 LCTRL S  &left_hrm LSHFT T  &kp D    &kp H  &right_hrm LSHFT N  &right_hrm3 LCTRL E  &right_hrm2 3 I  &kp O          &none
+&none              &kp Q  &kp Z           &kp C               &kp V              &kp B    &kp K  &kp M               &kp X                &dot             &kp SEMICOLON  &none
+                                          &ht_lyr 1 4         &none              &none    &none  &lt 2 SPACE         &ht_lyr 1 4
             >;
         };
 
@@ -467,7 +467,7 @@
 &none  &none         &kp ESC         &capsword     &as LA(LSHFT)  &kp LC(LS(TAB))    &kp LC(TAB)  &sk LEFT_META            &sret          &kp END   &kp HOME  &none
 &none  &kp LEFT      &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT      &kp LS(TAB)        &kp TAB      &kp RET                  &kp LC(BSPC)   &kp BSPC  &endRet   &none
 &none  &kp LC(LEFT)  &kp LC(DOWN)    &kp LC(UP)    &kp LC(RIGHT)  &kp LA(SPACE)      &kp DELETE   &kp LG(LS(PRINTSCREEN))  &kp LC(LA(T))  &kp LALT  &kp CLCK  &none
-                                     &kp LEFT_GUI  &toFunc        &to 1              &to 1        &toFunc                  &kp RIGHT_ALT
+                                     &toFunc       &toFunc        &kp LEFT_GUI       &kp RALT     &toFunc                  &toFunc
             >;
         };
 
@@ -500,10 +500,10 @@
 
         func_helper {
             bindings = <
-&trans  &trans  &trans  &trans  &trans       &trans         &trans       &trans       &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans       &trans         &trans       &trans       &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans       &trans         &trans       &trans       &trans  &trans  &trans  &trans
-                        &trans  &leave_func  &leave_func    &leave_func  &leave_func  &trans
+&trans  &trans  &trans  &trans       &trans       &trans         &trans       &trans       &trans       &trans  &trans  &trans
+&trans  &trans  &trans  &trans       &trans       &trans         &trans       &trans       &trans       &trans  &trans  &trans
+&trans  &trans  &trans  &trans       &trans       &trans         &trans       &trans       &trans       &trans  &trans  &trans
+                        &leave_func  &leave_func  &leave_func    &leave_func  &leave_func  &leave_func
             >;
         };
 
