@@ -155,7 +155,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "RIGHT_HRM3";
             #binding-cells = <2>;
-            flavor = "tap-preferred";
+            flavor = "balanced";
             tapping-term-ms = <150>;
             hold-trigger-key-positions = <6 7 8 9 10 11 18 19 20 21 22 23 30 31 32 33 34 35 39 40 41 36 37 38 0 12 24>;
             bindings = <&kp>, <&kp>;
@@ -540,6 +540,33 @@
 &none  &ht_k LEFT_META LEFT_WIN  &ht_k LALT LALT  &ht_k LCTRL LCTRL  &ht_k LSHFT LSHFT          &none    &none  &ht_k LSHFT LSHIFT         &ht_k LCTRL LCTRL  &ht_k LEFT_ALT LALT  &ht_k LEFT_META LEFT_META  &none
 &none  &none                     &none            &none              &none                      &none    &none  &none                      &none              &none                &none                      &none
                                                   &none              &none                      &none    &none  &none                      &none
+            >;
+        };
+
+        plaintext {
+            bindings = <
+&none  &none  &kp W  &kp F  &kp P      &kp G        &kp J      &kp L      &kp U  &kp Y  &none          &none
+&none  &kp A  &kp R  &kp S  &kp T      &kp D        &kp H      &kp N      &kp E  &kp I  &kp O          &none
+&none  &kp Q  &kp Z  &kp C  &kp V      &kp B        &kp K      &kp M      &kp X  &dot   &kp SEMICOLON  &none
+                     &to 0  &kp SPACE  &kp SPACE    &kp SPACE  &kp SPACE  &to 0
+            >;
+        };
+
+        one_handed_0 {
+            bindings = <
+&none  &none  &kp W  &kp F  &kp P      &kp G            &kp J      &kp L      &kp U  &kp Y  &none          &none
+&none  &kp A  &kp R  &kp S  &kp T      &kp D            &kp H      &kp N      &kp E  &kp I  &kp O          &none
+&none  &kp Q  &kp Z  &kp C  &kp V      &kp B            &kp K      &kp M      &kp X  &dot   &kp SEMICOLON  &none
+                     &to 0  &kp SPACE  &ht_lyr 14 14    &kp SPACE  &kp SPACE  &to 0
+            >;
+        };
+
+        one_handed_1 {
+            bindings = <
+&none  &kp J  &kp L  &kp U  &kp Y      &none        &none      &kp W      &kp F  &kp P  &kp G  &none
+&none  &kp H  &kp N  &kp E  &kp I      &kp O        &kp A      &kp R      &kp S  &kp T  &kp D  &none
+&none  &kp K  &kp M  &kp X  &dot       &kp SEMI     &kp Q      &kp Z      &kp C  &kp V  &kp B  &none
+                     &to 0  &kp SPACE  &kp SPACE    &kp SPACE  &kp SPACE  &to 0
             >;
         };
     };
