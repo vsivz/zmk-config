@@ -160,6 +160,15 @@
             hold-trigger-key-positions = <6 7 8 9 10 11 18 19 20 21 22 23 30 31 32 33 34 35 39 40 41 36 37 38 0 12 24>;
             bindings = <&kp>, <&kp>;
         };
+
+        mtab: mtab {
+            compatible = "zmk,behavior-tap-dance";
+            label = "MTAB";
+            #binding-cells = <0>;
+            bindings = <&on_MTab>, <&kp LG(TAB)>;
+
+            tapping-term-ms = <150>;
+        };
     };
 
     macros {
@@ -446,27 +455,27 @@
 
         navigation {
             bindings = <
-&none  &none               &kp LG(LC(LS(T)))  &kp LG(LC(LS(Q)))   &kp LG(RET)    &af4                 &on_MSTab             &on_MTab           &kp LG(H)          &sw2                    &sw1               &none
-&none  &kp LG(LC(LS(J)))   &kp LS(LC(LG(H)))  &kp LG(LA(J))       &kp LA(LG(H))  &kp LG(LC(LS(R)))    &kp LG(LC(UP_ARROW))  &kp LS(LC(LG(Z)))  &kp LG(LC(RIGHT))  &kp LG(LS(LEFT_ARROW))  &kp LS(LG(RIGHT))  &none
-&none  &kp LG(DOWN_ARROW)  &kp LG(UP_ARROW)   &kp LG(LEFT_ARROW)  &kp LG(RIGHT)  &none                &cpln                 &dlln              &kp LC(END)        &kp LC(HOME)            &none              &none
+&none  &none               &kp LG(LC(LS(T)))  &kp LG(LC(LS(Q)))   &kp LG(RET)    &af4                 &on_MSTab             &mtab              &kp LG(H)                &kp LG(F)               &none              &none
+&none  &kp LG(LC(LS(J)))   &kp LS(LC(LG(H)))  &kp LG(LA(J))       &kp LA(LG(H))  &kp LG(LC(LS(R)))    &kp LG(LC(UP_ARROW))  &kp LS(LC(LG(Z)))  &kp LG(LC(RIGHT))        &kp LG(LS(LEFT_ARROW))  &kp LS(LG(RIGHT))  &none
+&none  &kp LG(DOWN_ARROW)  &kp LG(UP_ARROW)   &kp LG(LEFT_ARROW)  &kp LG(RIGHT)  &kp LG(F5)           &kp LG(F6)            &kp LC(LG(LEFT))   &kp LC(LG(RIGHT_ARROW))  &kp LC(END)             &kp LC(HOME)       &none
                                               &none               &none          &none                &none                 &none              &none
             >;
         };
 
         symbols {
             bindings = <
-&none  &kp GRAVE      &kp AMPERSAND    &kp ASTRK  &kp TILDE          &kp QUESTION    &kp BSLH  &kp PIPE     &kp LEFT_BRACE        &kp RIGHT_BRACE        &none             &none
-&none  &kp PERCENT    &kp UNDER        &kp CARET  &kp APOSTROPHE     &kp EQUAL       &kp PLUS  &kp MINUS    &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp DOLLAR        &none
-&none  &kp LESS_THAN  &kp EXCLAMATION  &kp AT     &kp DOUBLE_QUOTES  &kp GRAVE       &kp FSLH  &kp HASH     &kp LBKT              &kp RBKT               &kp GREATER_THAN  &none
-                                       &none      &ht_lyr 7 7        &none           &none     &ht_lyr 7 7  &ht_ctl LCTRL LCTRL
+&none  &kp GRAVE      &kp AMPERSAND    &kp ASTRK    &kp TILDE          &kp QUESTION     &kp BSLH       &kp PIPE   &kp LEFT_BRACE        &kp RIGHT_BRACE        &none             &none
+&none  &kp PERCENT    &kp UNDER        &kp CARET    &kp APOSTROPHE     &kp EQUAL        &kp PLUS       &kp MINUS  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp DOLLAR        &none
+&none  &kp LESS_THAN  &kp EXCLAMATION  &kp AT       &kp DOUBLE_QUOTES  &kp GRAVE        &kp FSLH       &kp HASH   &kp LBKT              &kp RBKT               &kp GREATER_THAN  &none
+                                       &ht_lyr 7 7  &none              &ht_lyr 11 11    &ht_lyr 11 11  &none      &ht_lyr 7 7
             >;
         };
 
         functions {
             bindings = <
-&none  &none         &kp ESC         &capsword     &as LA(LSHFT)  &kp LC(LS(TAB))    &kp LC(TAB)  &sk LEFT_META            &sret          &kp END   &kp HOME  &none
+&none  &none         &kp ESC         &capsword     &dlln          &kp LC(LS(TAB))    &kp LC(TAB)  &cpln                    &sret          &kp END   &kp HOME  &none
 &none  &kp LEFT      &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT      &kp LS(TAB)        &kp TAB      &kp RET                  &kp LC(BSPC)   &kp BSPC  &endRet   &none
-&none  &kp LC(LEFT)  &kp LC(DOWN)    &kp LC(UP)    &kp LC(RIGHT)  &kp LA(SPACE)      &kp DELETE   &kp LG(LS(PRINTSCREEN))  &kp LC(LA(T))  &kp LALT  &kp CLCK  &none
+&none  &kp LC(LEFT)  &kp LC(DOWN)    &kp LC(UP)    &kp LC(RIGHT)  &kp LA(SPACE)      &kp DELETE   &kp LG(LS(PRINTSCREEN))  &kp LC(LA(T))  &none     &none     &none
                                      &kp LMETA     &toFunc        &toFunc            &toFunc      &toFunc                  &kp RALT
             >;
         };
@@ -522,6 +531,15 @@
 &trans  &trans  &trans  &trans     &trans     &trans       &STab_2      &Tab_2     &trans     &trans  &trans  &trans
 &trans  &trans  &trans  &trans     &trans     &trans       &trans       &trans     &trans     &trans  &trans  &trans
                         &off_MTab  &off_MTab  &off_MTab    &off_MTab    &off_MTab  &off_MTab
+            >;
+        };
+
+        modifier {
+            bindings = <
+&none  &none                     &none            &none              &ht_k LA(LSHFT) LA(LSHFT)  &none    &none  &ht_k LA(LSHFT) LA(LSHFT)  &none              &none                &none                      &none
+&none  &ht_k LEFT_META LEFT_WIN  &ht_k LALT LALT  &ht_k LCTRL LCTRL  &ht_k LSHFT LSHFT          &none    &none  &ht_k LSHFT LSHIFT         &ht_k LCTRL LCTRL  &ht_k LEFT_ALT LALT  &ht_k LEFT_META LEFT_META  &none
+&none  &none                     &none            &none              &none                      &none    &none  &none                      &none              &none                &none                      &none
+                                                  &none              &none                      &none    &none  &none                      &none
             >;
         };
     };
