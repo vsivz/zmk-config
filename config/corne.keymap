@@ -370,10 +370,10 @@
 
         modifier {
             bindings = <
-&none  &none                     &none            &ht_k LA(LSHFT) LA(LSHFT)  &ht_k LEFT_META LEFT_META  &none    &none  &ht_k LEFT_META LEFT_META  &ht_k LA(LSHFT) LA(LSHFT)  &none                &none                      &none
-&none  &ht_k LEFT_META LEFT_WIN  &ht_k LALT LALT  &ht_k LCTRL LCTRL          &ht_k LSHFT LSHFT          &none    &none  &ht_k LSHFT LSHIFT         &ht_k LCTRL LCTRL          &ht_k LEFT_ALT LALT  &ht_k LEFT_META LEFT_META  &none
-&none  &none                     &none            &none                      &none                      &none    &none  &none                      &none                      &none                &none                      &none
-                                                  &none                      &none                      &none    &none  &none                      &none
+&none  &none                       &none              &ht_k_2 LA(LSHFT) LA(LSHFT)  &ht_k_2 LEFT_META LEFT_META  &none    &none  &ht_k_2 LEFT_META LEFT_META  &ht_k_2 LA(LSHFT) LA(LSHFT)  &none                  &none                        &none
+&none  &ht_k_2 LEFT_META LEFT_WIN  &ht_k_2 LALT LALT  &ht_k_2 LCTRL LCTRL          &ht_k_2 LSHFT LSHFT          &none    &none  &ht_k_2 LSHFT LSHIFT         &ht_k_2 LCTRL LCTRL          &ht_k_2 LEFT_ALT LALT  &ht_k_2 LEFT_META LEFT_META  &none
+&none  &none                       &none              &none                        &none                        &none    &none  &none                        &none                        &none                  &none                        &none
+                                                      &none                        &none                        &none    &none  &none                        &none
             >;
         };
 
