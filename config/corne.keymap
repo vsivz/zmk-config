@@ -346,10 +346,10 @@
 
         symbols {
             bindings = <
-&none  &kp GRAVE      &kp AMPERSAND    &kp ASTRK    &kp TILDE          &kp QUESTION     &kp BSLH       &kp PIPE   &kp LEFT_BRACE        &kp RIGHT_BRACE        &none             &none
-&none  &kp PERCENT    &kp UNDER        &kp CARET    &kp APOSTROPHE     &kp EQUAL        &kp PLUS       &kp MINUS  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp DOLLAR        &none
-&none  &kp LESS_THAN  &kp EXCLAMATION  &kp AT       &kp DOUBLE_QUOTES  &kp GRAVE        &kp FSLH       &kp HASH   &kp LBKT              &kp RBKT               &kp GREATER_THAN  &none
-                                       &ht_lyr 7 7  &none              &ht_lyr 11 11    &ht_lyr 11 11  &none      &ht_lyr 7 7
+&none  &kp GRAVE      &kp AMPERSAND    &kp ASTRK    &kp TILDE       &kp QUESTION         &kp BSLH       &kp PIPE   &kp LEFT_BRACE        &kp RIGHT_BRACE        &none             &none
+&none  &kp EQUAL      &kp UNDER        &kp CARET    &kp APOSTROPHE  &kp DOUBLE_QUOTES    &kp DOLLAR     &kp MINUS  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp PLUS          &none
+&none  &kp LESS_THAN  &kp EXCLAMATION  &kp AT       &kp PERCENT     &kp GRAVE            &kp FSLH       &kp HASH   &kp LBKT              &kp RBKT               &kp GREATER_THAN  &none
+                                       &ht_lyr 7 7  &none           &ht_lyr 11 11        &ht_lyr 11 11  &none      &ht_lyr 7 7
             >;
         };
 
