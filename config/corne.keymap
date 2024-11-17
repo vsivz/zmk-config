@@ -257,6 +257,20 @@
             bindings = <&kp HOME &kp HOME &kp LS(END) &kp LS(END)>;
             label = "SELLINE";
         };
+
+        to_OH_2: to_OH_2 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp F22 &to 13 &tog 15>;
+            label = "TO_OH_2";
+        };
+
+        leave_OH_2: leave_OH_2 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&to 13 &tog 15>;
+            label = "LEAVE_OH_2";
+        };
     };
 
     combos { compatible = "zmk,combos"; };
@@ -275,7 +289,7 @@
 &kp LS(LC(LG(D)))  &none  &kp W           &kp F              &kp P              &kp G          &kp J        &kp L               &kp U               &kp Y            &none          &none
 &none              &kp A  &left_hrm2 3 R  &left_hrm LCTRL S  &left_hrm LSHFT T  &kp D          &kp H        &right_hrm LSHFT N  &right_hrm LCTRL E  &right_hrm2 3 I  &kp O          &none
 &none              &kp Q  &kp Z           &kp C              &kp V              &kp B          &kp K        &kp M               &kp X               &dot             &kp SEMICOLON  &none
-                                          &ht_lyr 11 11      &lt 2 SPACE        &ht_lyr 1 4    &ht_lyr 1 4  &lt 2 SPACE         &ht_lyr 1 4
+                                          &ht_lyr 11 11      &lt 2 SPACE        &ht_lyr 1 4    &ht_lyr 1 4  &lt 2 SPACE         &ht_lyr 11 11
             >;
         };
 
@@ -386,19 +400,19 @@
 
         one_handed_0 {
             bindings = <
-&none              &kp BACKSPACE  &kp W  &kp F  &kp P      &kp G            &kp J          &kp L      &kp U  &kp Y  &kp ENTER      &none
-&ht_lyr 14 14      &kp A          &kp R  &kp S  &kp T      &kp D            &kp H          &kp N      &kp E  &kp I  &kp O          &ht_lyr 14 14
-&ht_k LSHFT LSHFT  &kp Q          &kp Z  &kp C  &kp V      &kp B            &kp K          &kp M      &kp X  &dot   &kp BACKSPACE  &ht_k LSHFT LSHFT
-                                         &to 0  &kp SPACE  &ht_lyr 13 13    &ht_lyr 13 13  &kp SPACE  &to 0
+&none              &kp BACKSPACE  &kp W  &kp F          &kp P              &kp G            &kp J          &kp L              &kp U          &kp Y  &kp ENTER      &none
+&ht_lyr 14 14      &kp A          &kp R  &kp S          &kp T              &kp D            &kp H          &kp N              &kp E          &kp I  &kp O          &ht_lyr 14 14
+&ht_k LSHFT LSHFT  &kp Q          &kp Z  &kp C          &kp V              &kp B            &kp K          &kp M              &kp X          &dot   &kp BACKSPACE  &ht_k LSHFT LSHFT
+                                         &ht_lyr 14 14  &ht_k LSHFT SPACE  &ht_lyr 13 13    &ht_lyr 13 13  &ht_k LSHFT SPACE  &ht_lyr 14 14
             >;
         };
 
         one_handed_1 {
             bindings = <
-&none              &kp J  &kp L  &kp U  &kp Y      &kp ENTER        &kp BACKSPACE  &kp W      &kp F  &kp P  &kp G  &none
-&none              &kp H  &kp N  &kp E  &kp I      &kp O            &kp A          &kp R      &kp S  &kp T  &kp D  &none
-&ht_k LSHFT LSHFT  &kp K  &kp M  &kp X  &dot       &kp BACKSPACE    &kp Q          &kp Z      &kp C  &kp V  &kp B  &ht_k LSHFT LSHFT
-                                 &to 0  &kp SPACE  &kp SPACE        &kp SPACE      &kp SPACE  &to 0
+&to 0              &ht_k LSHFT BACKSPACE  &kp Y    &kp U  &kp L              &kp J       &kp G     &kp P              &kp F          &kp W  &ht_k LSHFT BACKSPACE  &to 0
+&none              &kp O                  &kp I    &kp E  &kp N              &kp H       &kp D     &kp T              &kp S          &kp R  &kp A                  &none
+&ht_k LSHFT LSHFT  &kp SEMI               &kp DOT  &kp X  &kp M              &kp K       &kp B     &kp V              &kp C          &kp Z  &kp Q                  &ht_k LSHFT LSHFT
+                                                   &to 0  &ht_k LSHFT SPACE  &to_OH_2    &to_OH_2  &ht_k LSHFT SPACE  &ht_lyr 14 14
             >;
         };
 
@@ -408,6 +422,15 @@
 &trans  &kp N0  &kp N1    &kp N2    &kp N3  &kp N4       &kp N0  &kp N1    &kp N2    &kp N3  &kp N4     &trans
 &trans  &kp N5  &kp N6    &kp N7    &kp N8  &kp N9       &kp N5  &kp N6    &kp N7    &kp N8  &kp N9     &trans
                           &trans    &trans  &trans       &trans  &trans    &trans
+            >;
+        };
+
+        OH_helper {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans         &trans       &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans         &trans       &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans         &trans       &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &leave_OH_2    &leave_OH_2  &trans  &trans
             >;
         };
     };
