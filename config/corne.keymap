@@ -143,6 +143,25 @@
             tapping-term-ms = <210>;
             flavor = "tap-preferred";
         };
+
+        ht_to_func: ht_to_func {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HT_TO_FUNC";
+            bindings = <&to_mo_func>, <&toFunc>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+        };
+
+        hrm4: hrm4 {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HRM4";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+        };
     };
 
     macros {
@@ -271,6 +290,13 @@
             bindings = <&to 13 &tog 15>;
             label = "LEAVE_OH_2";
         };
+
+        to_mo_func: to_mo_func {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp F22 &mo 4>;
+            label = "TO_MO_FUNC";
+        };
     };
 
     combos { compatible = "zmk,combos"; };
@@ -286,7 +312,7 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp LS(LC(LG(D)))  &none  &kp W           &kp F              &kp P              &kp G          &kp J        &kp L               &kp U               &kp Y            &none          &none
+&kp LS(LC(LG(D)))  &none  &kp W           &hrm4 LEFT_META F  &kp P              &kp G          &kp J        &kp L               &hrm4 LMETA U       &kp Y            &none          &none
 &none              &kp A  &left_hrm2 3 R  &left_hrm LCTRL S  &left_hrm LSHFT T  &kp D          &kp H        &right_hrm LSHFT N  &right_hrm LCTRL E  &right_hrm2 3 I  &kp O          &none
 &none              &kp Q  &kp Z           &kp C              &kp V              &kp B          &kp K        &kp M               &kp X               &dot             &kp SEMICOLON  &none
                                           &ht_lyr 11 11      &lt 2 SPACE        &ht_lyr 1 4    &ht_lyr 1 4  &lt 2 SPACE         &ht_lyr 11 11
@@ -301,9 +327,9 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&none  &kp DOT  &kp MINUS       &kp LS(PLUS)  &kp LS(UNDER)  &none            &none      &to 5          &to 6   &none   &kp COLON  &none
+&none  &kp DOT  &kp MINUS       &kp LS(PLUS)  &kp LS(UNDER)  &none            &none      &none          &none   &none   &kp COLON  &none
 &none  &kp N0   &kp N1          &kp N2        &kp N3         &kp N4           &kp N5     &kp N6         &kp N7  &kp N8  &kp N9     &none
-&none  &none    &kp LEFT_ARROW  &kp RIGHT     &kp DELETE     &kp BACKSPACE    &kp FSLH   &kp LA(SPACE)  &kp X   &dot    &none      &none
+&none  &none    &kp LEFT_ARROW  &kp RIGHT     &kp DELETE     &kp BACKSPACE    &kp FSLH   &kp LA(SPACE)  &kp X   &dot    &kp COLON  &none
                                 &none         &to 0          &kp SPACE        &kp SPACE  &to 0          &none
             >;
         };
@@ -328,10 +354,10 @@
 
         functions {
             bindings = <
-&none  &none         &kp ESC         &capsword     &dlln          &kp LC(LS(TAB))    &kp LC(TAB)  &cpln                    &sret          &kp END   &kp HOME  &none
-&none  &kp LEFT      &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT      &kp LS(TAB)        &kp TAB      &kp RET                  &kp LC(BSPC)   &kp BSPC  &endRet   &none
-&none  &kp LC(LEFT)  &kp LC(DOWN)    &kp LC(UP)    &kp LC(RIGHT)  &kp LA(SPACE)      &kp DELETE   &kp LG(LS(PRINTSCREEN))  &kp LC(LA(T))  &kp HOME  &selline  &none
-                                     &kp LMETA     &to 0          &toFunc            &toFunc      &none                    &kp RALT
+&none  &none         &kp ESC         &capsword     &dlln          &kp LC(LS(TAB))    &kp LC(TAB)      &cpln                    &sret          &kp END   &kp HOME  &none
+&none  &kp LEFT      &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT      &kp LS(TAB)        &kp TAB          &kp RET                  &kp LC(BSPC)   &kp BSPC  &endRet   &none
+&none  &kp LC(LEFT)  &kp LC(DOWN)    &kp LC(UP)    &kp LC(RIGHT)  &kp LA(SPACE)      &kp DELETE       &kp LG(LS(PRINTSCREEN))  &kp LC(LA(T))  &kp HOME  &selline  &none
+                                     &kp LMETA     &to 0          &ht_to_func 0 0    &ht_to_func 0 0  &none                    &kp RALT
             >;
         };
 
