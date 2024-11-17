@@ -356,7 +356,7 @@
         functions {
             bindings = <
 &none  &none         &kp ESC         &capsword     &dlln          &kp LC(LS(TAB))    &kp LC(TAB)      &cpln                    &sret          &kp END   &kp HOME  &none
-&none  &kp LEFT      &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT      &kp LS(TAB)        &kp TAB          &kp RET                  &kp LC(BSPC)   &kp BSPC  &endRet   &none
+&none  &kp LEFT      &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT      &kp LS(TAB)        &none            &kp RET                  &kp LC(BSPC)   &kp BSPC  &kp TAB   &none
 &none  &kp LC(LEFT)  &kp LC(DOWN)    &kp LC(UP)    &kp LC(RIGHT)  &kp LA(SPACE)      &kp DELETE       &kp LG(LS(PRINTSCREEN))  &kp LC(LA(T))  &kp HOME  &selline  &none
                                      &kp LMETA     &to 0          &ht_to_func 0 0    &ht_to_func 0 0  &none                    &kp RALT
             >;
