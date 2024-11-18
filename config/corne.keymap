@@ -313,10 +313,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp LS(LC(LG(D)))  &none         &kp W           &hrm4 LEFT_META F    &kp P              &kp G          &kp J        &kp L               &hrm4 LMETA U         &kp Y            &none            &none
-&none              &kp A         &left_hrm2 3 R  &left_hrm_3 LCTRL S  &left_hrm LSHFT T  &kp D          &kp H        &right_hrm LSHFT N  &right_hrm_3 LCTRL E  &right_hrm2 3 I  &kp O            &none
-&none              &hrm4 LALT Q  &kp Z           &kp C                &kp V              &kp B          &kp K        &kp M               &kp X                 &dot             &hrm4 LALT SEMI  &none
-                                                 &ht_lyr 5 5          &lt 2 SPACE        &ht_lyr 1 4    &ht_lyr 1 4  &lt 2 SPACE         &ht_lyr 5 5
+&kp LS(LC(LG(D)))  &kp LALT  &kp W           &kp F                &kp P              &kp G          &kp J        &kp L               &kp U                 &kp Y            &kp LALT       &none
+&none              &kp A     &left_hrm2 3 R  &left_hrm_3 LCTRL S  &left_hrm LSHFT T  &kp D          &kp H        &right_hrm LSHFT N  &right_hrm_3 LCTRL E  &right_hrm2 3 I  &kp O          &none
+&kp LEFT_GUI       &kp Q     &kp Z           &kp C                &kp V              &kp B          &kp K        &kp M               &kp X                 &dot             &kp SEMICOLON  &kp LEFT_GUI
+                                             &ht_lyr 5 5          &lt 2 SPACE        &ht_lyr 1 4    &ht_lyr 1 4  &lt 2 SPACE         &ht_lyr 5 5
             >;
         };
 
@@ -409,19 +409,19 @@
 
         one_handed_0 {
             bindings = <
-&none              &kp BACKSPACE  &kp W  &kp F          &kp P              &kp G            &kp J          &kp L              &kp U          &kp Y  &kp ENTER      &none
-&ht_lyr 12 12      &kp A          &kp R  &kp S          &kp T              &kp D            &kp H          &kp N              &kp E          &kp I  &kp O          &ht_lyr 12 12
-&ht_k LSHFT LSHFT  &kp Q          &kp Z  &kp C          &kp V              &kp B            &kp K          &kp M              &kp X          &dot   &kp BACKSPACE  &ht_k LSHFT LSHFT
-                                         &ht_lyr 12 12  &ht_k LSHFT SPACE  &ht_lyr 11 11    &ht_lyr 11 11  &ht_k LSHFT SPACE  &ht_lyr 12 12
+&none               &kp BACKSPACE  &kp W  &kp F          &kp P              &kp G            &kp J          &kp L              &kp U          &kp Y  &kp ENTER      &none
+&ht_sk LSHFT LSHFT  &kp A          &kp R  &kp S          &kp T              &kp D            &kp H          &kp N              &kp E          &kp I  &kp O          &ht_sk LSHFT LSHFT
+&ht_k LSHFT LSHFT   &kp Q          &kp Z  &kp C          &kp V              &kp B            &kp K          &kp M              &kp X          &dot   &kp BACKSPACE  &ht_sk LSHFT LSHFT
+                                          &ht_lyr 12 12  &ht_k LSHFT SPACE  &ht_lyr 11 11    &ht_lyr 11 11  &ht_k LSHFT SPACE  &ht_lyr 12 12
             >;
         };
 
         one_handed_1 {
             bindings = <
-&to 0              &ht_k LSHFT BACKSPACE  &kp Y    &kp U  &kp L              &kp J       &kp G     &kp P              &kp F          &kp W  &ht_k LSHFT BACKSPACE  &to 0
-&none              &kp O                  &kp I    &kp E  &kp N              &kp H       &kp D     &kp T              &kp S          &kp R  &kp A                  &none
-&ht_k LSHFT LSHFT  &kp SEMI               &kp DOT  &kp X  &kp M              &kp K       &kp B     &kp V              &kp C          &kp Z  &kp Q                  &ht_k LSHFT LSHFT
-                                                   &to 0  &ht_k LSHFT SPACE  &to_OH_2    &to_OH_2  &ht_k LSHFT SPACE  &ht_lyr 12 12
+&to 0               &ht_k LSHFT BACKSPACE  &kp Y    &kp U  &kp L              &kp J       &kp G     &kp P              &kp F          &kp W  &ht_k LSHFT BACKSPACE  &to 0
+&ht_sk LSHFT LSHFT  &kp O                  &kp I    &kp E  &kp N              &kp H       &kp D     &kp T              &kp S          &kp R  &kp A                  &ht_sk LSHFT LSHFT
+&ht_k LSHFT LSHFT   &kp SEMI               &kp DOT  &kp X  &kp M              &kp K       &kp B     &kp V              &kp C          &kp Z  &kp Q                  &ht_k LSHFT LSHFT
+                                                    &to 0  &ht_k LSHFT SPACE  &to_OH_2    &to_OH_2  &ht_k LSHFT SPACE  &ht_lyr 12 12
             >;
         };
 
