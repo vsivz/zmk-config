@@ -232,35 +232,35 @@
         toFunc: toFunc {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp F22 &to 4 &tog 7>;
+            bindings = <&kp F22 &to 4 &tog 9>;
             label = "TOFUNC";
         };
 
         leave_func: leave_func {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&tog 7 &to 0>;
+            bindings = <&tog 9 &to 0>;
             label = "LEAVE_FUNC";
         };
 
         on_MTab: on_MTab {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kt LEFT_META &tog 8 &kp TAB>;
+            bindings = <&kt LEFT_META &tog 10 &kp TAB>;
             label = "ON_MTAB";
         };
 
         on_MSTab: on_MSTab {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kt LEFT_META &tog 8 &kp LS(TAB)>;
+            bindings = <&kt LEFT_META &tog 10 &kp LS(TAB)>;
             label = "ON_MSTAB";
         };
 
         off_MTab: off_MTab {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kt LEFT_META &tog 8>;
+            bindings = <&kt LEFT_META &tog 10>;
             label = "OFF_MTAB";
         };
 
@@ -288,14 +288,14 @@
         to_OH_2: to_OH_2 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp F22 &to 11 &tog 13>;
+            bindings = <&kp F22 &to 13 &tog 15>;
             label = "TO_OH_2";
         };
 
         leave_OH_2: leave_OH_2 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&to 11 &tog 13>;
+            bindings = <&to 13 &tog 15>;
             label = "LEAVE_OH_2";
         };
 
@@ -323,7 +323,7 @@
 &kp LS(LC(LG(D)))  &kp LALT  &kp W           &kp F                &kp P              &kp G          &kp J        &kp L               &kp U                 &kp Y            &kp LALT       &none
 &none              &kp A     &left_hrm2 3 R  &left_hrm_3 LCTRL S  &left_hrm LSHFT T  &kp D          &kp H        &right_hrm LSHFT N  &right_hrm_3 LCTRL E  &right_hrm2 3 I  &kp O          &none
 &kp LEFT_GUI       &kp Q     &kp Z           &kp C                &kp V              &kp B          &kp K        &kp M               &kp X                 &dot             &kp SEMICOLON  &kp LEFT_GUI
-                                             &ht_lyr 5 5          &lt 2 SPACE        &ht_lyr 1 4    &ht_lyr 1 4  &lt 2 SPACE         &ht_lyr 5 5
+                                             &ht_lyr 7 7          &lt 2 SPACE        &ht_lyr 1 4    &ht_lyr 1 4  &lt 2 SPACE         &ht_lyr 7 7
             >;
         };
 
@@ -353,10 +353,10 @@
 
         symbols {
             bindings = <
-&none  &kp GRAVE      &kp AMPERSAND    &kp ASTRK    &kp TILDE       &kp QUESTION         &kp BSLH     &kp PIPE   &kp LEFT_BRACE        &kp RIGHT_BRACE        &none             &none
-&none  &kp EQUAL      &kp UNDER        &kp CARET    &kp APOSTROPHE  &kp DOUBLE_QUOTES    &kp SLASH    &kp MINUS  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp PLUS          &none
-&none  &kp LESS_THAN  &kp EXCLAMATION  &kp AT       &kp PERCENT     &kp GRAVE            &kp DOLLAR   &kp HASH   &kp LBKT              &kp RBKT               &kp GREATER_THAN  &none
-                                       &ht_lyr 5 5  &none           &ht_lyr 9 9          &ht_lyr 9 9  &none      &ht_lyr 5 5
+&none  &kp GRAVE      &kp AMPERSAND    &kp ASTRK    &kp TILDE       &kp QUESTION         &kp BSLH       &kp PIPE   &kp LEFT_BRACE        &kp RIGHT_BRACE        &none             &none
+&none  &kp EQUAL      &kp UNDER        &kp CARET    &kp APOSTROPHE  &kp DOUBLE_QUOTES    &kp SLASH      &kp MINUS  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp PLUS          &none
+&none  &kp LESS_THAN  &kp EXCLAMATION  &kp AT       &kp PERCENT     &kp GRAVE            &kp DOLLAR     &kp HASH   &kp LBKT              &kp RBKT               &kp GREATER_THAN  &none
+                                       &ht_lyr 7 7  &none           &ht_lyr 11 11        &ht_lyr 11 11  &none      &ht_lyr 7 7
             >;
         };
 
@@ -365,15 +365,33 @@
 &none  &none         &kp ESC         &capsword     &dlln          &kp LC(LS(TAB))    &kp LC(TAB)  &cpln                    &sret          &kp END   &kp HOME  &none
 &none  &kp LEFT      &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT      &kp LS(TAB)        &none        &kp RET                  &kp LC(BSPC)   &kp BSPC  &kp TAB   &none
 &none  &kp LC(LEFT)  &kp LC(DOWN)    &kp LC(UP)    &kp LC(RIGHT)  &kp LA(SPACE)      &kp DELETE   &kp LG(LS(PRINTSCREEN))  &kp LC(LA(T))  &kp HOME  &selline  &none
+                                     &kp LMETA     &to 0          &mo 5              &mo 5        &none                    &kp RALT
+            >;
+        };
+
+        functions2 {
+            bindings = <
+&none  &none         &kp ESC         &capsword     &dlln          &kp LC(LS(TAB))    &kp LC(TAB)  &cpln                    &sret          &kp END   &kp HOME  &none
+&none  &kp LEFT      &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT      &kp LS(TAB)        &none        &kp RET                  &kp LC(BSPC)   &kp BSPC  &kp TAB   &none
+&none  &kp LC(LEFT)  &kp LC(DOWN)    &kp LC(UP)    &kp LC(RIGHT)  &kp LA(SPACE)      &kp DELETE   &kp LG(LS(PRINTSCREEN))  &kp LC(LA(T))  &kp HOME  &selline  &none
                                      &kp LMETA     &to 0          &trans             &trans       &none                    &kp RALT
+            >;
+        };
+
+        qwerty {
+            bindings = <
+&kp TAB    &kp Q  &kp W  &kp E  &kp R      &kp T        &kp Y      &kp U     &kp I      &kp O    &kp P     &kp BSPC
+&kp CAPS   &kp A  &kp S  &kp D  &kp F      &kp G        &kp H      &kp J     &kp K      &kp L    &kp SEMI  &kp ENTER
+&kp LSHFT  &kp Z  &kp X  &kp C  &kp V      &kp B        &kp N      &kp M     &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
+                         &to 0  &kp LCTRL  &kp SPACE    &kp SPACE  &kp LALT  &kp LMETA
             >;
         };
 
         system {
             bindings = <
 &none  &kp F1      &kp F2      &kp F3           &kp F4             &kp F5    &kp F6  &kp F7        &kp F8              &kp F9                    &kp F10                   &none
-&none  &kp K_MUTE  &kp K_PREV  &kp K_NEXT       &kp K_PLAY_PAUSE   &to 6     &to 6   &kp C_REWIND  &kp C_FAST_FORWARD  &kp C_BRI_INC             &kp C_BRI_DEC             &none
-&none  &kp F11     &kp F12     &kp C_VOLUME_UP  &kp C_VOLUME_DOWN  &to 10    &to 10  &to 14        &to 15              &kp C_BRIGHTNESS_MINIMUM  &kp C_BRIGHTNESS_MAXIMUM  &none
+&none  &kp K_MUTE  &kp K_PREV  &kp K_NEXT       &kp K_PLAY_PAUSE   &to 8     &to 8   &kp C_REWIND  &kp C_FAST_FORWARD  &kp C_BRI_INC             &kp C_BRI_DEC             &none
+&none  &kp F11     &kp F12     &kp C_VOLUME_UP  &kp C_VOLUME_DOWN  &to 12    &to 12  &to 16        &to 6               &kp C_BRIGHTNESS_MINIMUM  &kp C_BRIGHTNESS_MAXIMUM  &none
                                &none            &none              &none     &none   &none         &none
             >;
         };
@@ -383,7 +401,7 @@
 &none  &none  &kp W  &kp F  &kp P      &kp G          &kp J      &kp L      &kp U  &kp Y  &none          &none
 &none  &kp A  &kp R  &kp S  &kp T      &kp D          &kp H      &kp N      &kp E  &kp I  &kp O          &none
 &none  &kp Q  &kp Z  &kp C  &kp V      &kp B          &kp K      &kp M      &kp X  &dot   &kp SEMICOLON  &none
-                     &to 0  &kp SPACE  &ht_lyr 7 7    &kp SPACE  &kp SPACE  &to 0
+                     &to 0  &kp SPACE  &ht_lyr 9 9    &kp SPACE  &kp SPACE  &to 0
             >;
         };
 
@@ -419,7 +437,7 @@
 &none               &kp BACKSPACE  &kp W  &kp F          &kp P              &kp G            &kp J          &kp L              &kp U          &kp Y  &kp ENTER      &none
 &ht_sk LSHFT LSHFT  &kp A          &kp R  &kp S          &kp T              &kp D            &kp H          &kp N              &kp E          &kp I  &kp O          &ht_sk LSHFT LSHFT
 &ht_k LSHFT LSHFT   &kp Q          &kp Z  &kp C          &kp V              &kp B            &kp K          &kp M              &kp X          &dot   &kp BACKSPACE  &ht_sk LSHFT LSHFT
-                                          &ht_lyr 12 12  &ht_k LSHFT SPACE  &ht_lyr 11 11    &ht_lyr 11 11  &ht_k LSHFT SPACE  &ht_lyr 12 12
+                                          &ht_lyr 14 14  &ht_k LSHFT SPACE  &ht_lyr 13 13    &ht_lyr 13 13  &ht_k LSHFT SPACE  &ht_lyr 14 14
             >;
         };
 
@@ -428,7 +446,7 @@
 &to 0               &ht_k LSHFT BACKSPACE  &kp Y    &kp U  &kp L              &kp J       &kp G     &kp P              &kp F          &kp W  &ht_k LSHFT BACKSPACE  &to 0
 &ht_sk LSHFT LSHFT  &kp O                  &kp I    &kp E  &kp N              &kp H       &kp D     &kp T              &kp S          &kp R  &kp A                  &ht_sk LSHFT LSHFT
 &ht_k LSHFT LSHFT   &kp SEMI               &kp DOT  &kp X  &kp M              &kp K       &kp B     &kp V              &kp C          &kp Z  &kp Q                  &ht_k LSHFT LSHFT
-                                                    &to 0  &ht_k LSHFT SPACE  &to_OH_2    &to_OH_2  &ht_k LSHFT SPACE  &ht_lyr 12 12
+                                                    &to 0  &ht_k LSHFT SPACE  &to_OH_2    &to_OH_2  &ht_k LSHFT SPACE  &ht_lyr 14 14
             >;
         };
 
@@ -456,15 +474,6 @@
 &none  &kp N0  &kp N1  &kp N2     &kp N3         &kp NUMBER_4    &none  &none  &none  &none  &none  &none
 &none  &kp N8  &kp N9  &kp LC(Z)  &kp LS(LC(Z))  &kp LC(S)       &none  &none  &none  &none  &none  &none
                        &to 0      &to 0          &none           &none  &none  &none
-            >;
-        };
-
-        qwerty {
-            bindings = <
-&kp TAB    &kp Q  &kp W  &kp E  &kp R      &kp T        &kp Y      &kp U     &kp I      &kp O    &kp P     &kp BSPC
-&kp CAPS   &kp A  &kp S  &kp D  &kp F      &kp G        &kp H      &kp J     &kp K      &kp L    &kp SEMI  &kp ENTER
-&kp LSHFT  &kp Z  &kp X  &kp C  &kp V      &kp B        &kp N      &kp M     &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
-                         &to 0  &kp LCTRL  &kp SPACE    &kp SPACE  &kp LALT  &kp LMETA
             >;
         };
     };
