@@ -305,6 +305,13 @@
             bindings = <&kp F22 &mo 4>;
             label = "TO_MO_FUNC";
         };
+
+        dlln2: dlln2 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp END &kp END &kp LS(LC(BACKSPACE))>;
+            label = "DLLN2";
+        };
     };
 
     combos { compatible = "zmk,combos"; };
@@ -362,10 +369,10 @@
 
         functions {
             bindings = <
-&none  &none         &kp ESC         &capsword     &dlln          &kp LC(LS(TAB))    &kp LC(TAB)  &cpln                    &sret          &kp END   &kp HOME  &none
-&none  &kp LEFT      &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT      &kp LS(TAB)        &none        &kp RET                  &kp LC(BSPC)   &kp BSPC  &kp TAB   &none
-&none  &kp LC(LEFT)  &kp LC(DOWN)    &kp LC(UP)    &kp LC(RIGHT)  &kp LA(SPACE)      &kp DELETE   &kp LG(LS(PRINTSCREEN))  &kp LC(LA(T))  &kp HOME  &selline  &none
-                                     &kp LMETA     &to 0          &mo 5              &mo 5        &none                    &kp RALT
+&none  &none         &kp ESC         &capsword     &dlln2         &kp LC(LS(TAB))    &kp LC(TAB)     &cpln                    &sret          &kp END   &kp HOME  &none
+&none  &kp LEFT      &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT      &kp LS(TAB)        &kp LC(DELETE)  &kp RET                  &kp LC(BSPC)   &kp BSPC  &kp TAB   &none
+&none  &kp LC(LEFT)  &kp LC(DOWN)    &kp LC(UP)    &kp LC(RIGHT)  &kp LA(SPACE)      &kp DELETE      &kp LG(LS(PRINTSCREEN))  &kp LC(LA(T))  &kp HOME  &selline  &none
+                                     &kp LMETA     &to 0          &mo 5              &mo 5           &none                    &kp RALT
             >;
         };
 
