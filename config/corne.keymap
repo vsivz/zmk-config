@@ -316,7 +316,7 @@
             label = "DLLN2";
         };
 
-        endret: endret {
+        end_Ret: endret {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp END &kp RET>;
