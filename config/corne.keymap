@@ -182,6 +182,14 @@
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+
+        caps_word1: caps_word1 {
+            compatible = "zmk,behavior-caps-word";
+            label = "CAPS_WORD1";
+            #binding-cells = <0>;
+            continue-list = <F22>;
+            mods = <(MOD_LSFT)>;
+        };
     };
 
     macros {
@@ -237,7 +245,7 @@
         capsword: capsword {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp F22 &caps_word>;
+            bindings = <&kp F22 &caps_word1>;
             label = "CAPSWORD";
         };
 
@@ -381,10 +389,10 @@
 
         functions {
             bindings = <
-&none  &none         &kp ESC         &morph_caps_word  &dlln          &kp LC(LS(TAB))    &kp LC(TAB)     &cpln                    &sret          &kp END   &kp HOME  &none
-&none  &kp LEFT      &kp DOWN_ARROW  &kp UP_ARROW      &kp RIGHT      &kp LS(TAB)        &kp LC(DELETE)  &kp RET                  &kp LC(BSPC)   &kp BSPC  &kp TAB   &none
-&none  &kp LC(LEFT)  &kp LC(DOWN)    &kp LC(UP)        &kp LC(RIGHT)  &kp LA(SPACE)      &kp DELETE      &kp LG(LS(PRINTSCREEN))  &kp LC(LA(T))  &kp HOME  &selline  &none
-                                     &kp LMETA         &to 0          &mo 5              &mo 5           &none                    &kp RALT
+&none  &none         &kp ESC         &caps_word1   &dlln          &kp LC(LS(TAB))    &kp LC(TAB)     &cpln                    &sret          &kp END   &kp HOME  &none
+&none  &kp LEFT      &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT      &kp LS(TAB)        &kp LC(DELETE)  &kp RET                  &kp LC(BSPC)   &kp BSPC  &kp TAB   &none
+&none  &kp LC(LEFT)  &kp LC(DOWN)    &kp LC(UP)    &kp LC(RIGHT)  &kp LA(SPACE)      &kp DELETE      &kp LG(LS(PRINTSCREEN))  &kp LC(LA(T))  &kp HOME  &selline  &none
+                                     &kp LMETA     &to 0          &mo 5              &mo 5           &none                    &kp RALT
             >;
         };
 
