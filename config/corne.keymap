@@ -60,11 +60,12 @@
             label = "LEFT_HRM";
             #binding-cells = <2>;
             flavor = "balanced";
-            tapping-term-ms = <150>;
+            tapping-term-ms = <130>;
             hold-trigger-key-positions = <6 7 8 9 10 11 18 19 20 21 22 23 30 31 32 33 34 35 39 40 41 36 37 38 0 12 24>;
             bindings = <&kp>, <&kp>;
 
             require-prior-idle-ms = <60>;
+            hold-trigger-on-release;
         };
 
         right_hrm: right_hrm {
@@ -73,10 +74,11 @@
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <150>;
+            tapping-term-ms = <130>;
             flavor = "balanced";
             hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38 39 40 41 11 23 35>;
             require-prior-idle-ms = <60>;
+            hold-trigger-on-release;
         };
 
         left_hrm2: left_hrm2 {
@@ -84,11 +86,12 @@
             label = "LEFT_HRM2";
             #binding-cells = <2>;
             flavor = "balanced";
-            tapping-term-ms = <150>;
+            tapping-term-ms = <135>;
             hold-trigger-key-positions = <6 7 9 10 11 18 19 20 21 22 23 30 31 32 33 34 35 39 40 41 8 36 37 38 0 12 24>;
             bindings = <&mo>, <&kp>;
 
-            require-prior-idle-ms = <75>;
+            require-prior-idle-ms = <65>;
+            hold-trigger-on-release;
         };
 
         right_hrm2: right_hrm2 {
@@ -97,10 +100,12 @@
             bindings = <&mo>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <150>;
+            tapping-term-ms = <135>;
             flavor = "balanced";
             hold-trigger-key-positions = <0 1 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38 2 3 4 39 40 41 11 23 35>;
-            require-prior-idle-ms = <75>;
+            require-prior-idle-ms = <65>;
+            hold-trigger-on-release;
+            quick-tap-ms = <0>;
         };
 
         mtab: mtab {
@@ -160,6 +165,7 @@
             bindings = <&kp>, <&kp>;
 
             require-prior-idle-ms = <75>;
+            hold-trigger-on-release;
         };
 
         right_hrm_3: right_hrm_3 {
@@ -172,6 +178,7 @@
             flavor = "tap-preferred";
             hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38 39 40 41 11 23 35>;
             require-prior-idle-ms = <75>;
+            hold-trigger-on-release;
         };
 
         morph_caps_word: morph_caps_word {
@@ -332,9 +339,24 @@
             bindings = <&kp END &kp END &kp LS(LC(BACKSPACE))>;
             label = "DLLN2";
         };
+
+        cut_line: cut_line {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp HOME &kp HOME &kp LS(END) &kp LS(END) &kp LC(X)>;
+            label = "CUT_LINE";
+        };
     };
 
-    combos { compatible = "zmk,combos"; };
+    combos {
+        compatible = "zmk,combos";
+
+        cut {
+            bindings = <&cut_line>;
+            key-positions = <4 7>;
+            layers = <4 5>;
+        };
+    };
 
     keymap {
         compatible = "zmk,keymap";
@@ -400,7 +422,7 @@
             bindings = <
 &none  &none         &kp ESC         &capsword     &dlln          &kp LC(LS(TAB))    &kp LC(TAB)  &cpln                    &sret          &kp END   &kp HOME  &none
 &none  &kp LEFT      &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT      &kp LS(TAB)        &kp LC(DEL)  &kp RET                  &kp LC(BSPC)   &kp BSPC  &kp TAB   &none
-&none  &kp LC(LEFT)  &kp LC(DOWN)    &kp LC(UP)    &kp LC(RIGHT)  &kp LA(SPACE)      &kp DELETE   &kp LG(LS(PRINTSCREEN))  &kp LC(LA(T))  &kp HOME  &selline  &none
+&none  &kp LC(LEFT)  &kp LC(DOWN)    &kp LC(UP)    &kp LC(RIGHT)  &kp LA(SPACE)      &kp DELETE   &kp LG(LS(PRINTSCREEN))  &kp LC(LA(T))  &end_ret  &selline  &none
                                      &kp LMETA     &to 0          &trans             &trans       &none                    &kp RALT
             >;
         };
