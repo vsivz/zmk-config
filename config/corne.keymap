@@ -369,7 +369,7 @@
         tog_mouse: tog_mouse {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_ALT &to 13>;
+            bindings = <&kp LEFT_ALT &to 14>;
             label = "TOG_MOUSE";
         };
     };
@@ -519,9 +519,18 @@
         mouse {
             bindings = <
 &to 0   &off_mouse   &kp W            &kp F       &kp P      &kp G     &kp J   &kp LEFT_ALT  &kp LSHFT  &kp LCTRL  &kp SEMI  &trans
-&trans  &kp A        &kp R            &kp S       &kp T      &kp D     &kp H   &kp N         &kp E      &kp I      &kp O     &trans
+&trans  &kp A        &kp R            &kp S       &mt Y T    &kp D     &kp H   &kp N         &kp E      &kp I      &kp O     &trans
 &trans  &kp LC(TAB)  &kp LC(LS(TAB))  &kp LC(C)   &kp LC(V)  &kp B     &kp K   &kp M         &kp X      &kp DOT    &trans    &trans
                                       &tog_mouse  &kp SPACE  &trans    &trans  &trans        &trans
+            >;
+        };
+
+        mouse_locked {
+            bindings = <
+&to 0   &off_mouse   &kp W            &kp F       &kp P      &kp G     &kp J   &kp LEFT_ALT  &kp LSHFT  &kp LCTRL  &kp SEMI  &trans
+&trans  &kp A        &kp R            &kp S       &kp T      &kp D     &kp H   &kp N         &kp E      &kp I      &kp O     &trans
+&trans  &kp LC(TAB)  &kp LC(LS(TAB))  &kp LC(C)   &kp LC(V)  &kp B     &kp K   &kp M         &kp X      &kp DOT    &trans    &trans
+                                      &off_mouse  &kp SPACE  &trans    &trans  &trans        &trans
             >;
         };
     };
