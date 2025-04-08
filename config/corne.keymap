@@ -349,9 +349,28 @@
         switch_mouse: switch_mouse {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_press &mo 13 &kp SCROLLLOCK>, <&macro_pause_for_release>, <&macro_release &mo 13 &kp SCROLLLOCK>;
+            bindings =
+                <&macro_press>,
+                <&mo 13 &kp SCROLLLOCK>,
+                <&macro_pause_for_release>,
+                <&macro_release>,
+                <&mo 13 &kp SCROLLLOCK>;
 
             label = "SWITCH_MOUSE";
+        };
+
+        off_mouse: off_mouse {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp Q &to 0>;
+            label = "OFF_MOUSE";
+        };
+
+        tog_mouse: tog_mouse {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_ALT &to 13>;
+            label = "TOG_MOUSE";
         };
     };
 
@@ -421,7 +440,7 @@
 &none  &none         &kp ESC         &capsword     &dlln          &kp LC(LS(TAB))    &kp LC(TAB)     &cpln                    &sret          &kp END   &kp HOME  &none
 &none  &kp LEFT      &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT      &kp LS(TAB)        &kp LC(DELETE)  &kp RET                  &kp LC(BSPC)   &kp BSPC  &kp TAB   &none
 &none  &kp LC(LEFT)  &kp LC(DOWN)    &kp LC(UP)    &kp LC(RIGHT)  &kp LA(SPACE)      &kp DELETE      &kp LG(LS(PRINTSCREEN))  &kp LC(LA(T))  &end_ret  &selline  &none
-                                     &kp LMETA     &to 0          &mo 5              &mo 13          &none                    &kp RALT
+                                     &kp LMETA     &to 0          &mo 5              &switch_mouse   &none                    &kp RALT
             >;
         };
 
@@ -499,10 +518,10 @@
 
         mouse {
             bindings = <
-&trans  &kp Q  &kp W  &kp F   &kp P   &kp G     &kp J   &kp L   &kp U   &kp Y    &kp SEMI  &trans
-&trans  &kp A  &kp R  &kp S   &kp T   &kp D     &kp H   &kp N   &kp E   &kp I    &kp O     &trans
-&trans  &kp Q  &kp Z  &kp C   &kp V   &kp B     &kp K   &kp M   &kp X   &kp DOT  &trans    &trans
-                      &trans  &trans  &trans    &trans  &trans  &trans
+&to 0   &off_mouse   &kp W            &kp F       &kp P      &kp G     &kp J   &kp LEFT_ALT  &kp LSHFT  &kp LCTRL  &kp SEMI  &trans
+&trans  &kp A        &kp R            &kp S       &kp T      &kp D     &kp H   &kp N         &kp E      &kp I      &kp O     &trans
+&trans  &kp LC(TAB)  &kp LC(LS(TAB))  &kp LC(C)   &kp LC(V)  &kp B     &kp K   &kp M         &kp X      &kp DOT    &trans    &trans
+                                      &tog_mouse  &kp SPACE  &trans    &trans  &trans        &trans
             >;
         };
     };
