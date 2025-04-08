@@ -345,6 +345,14 @@
             bindings = <&kp HOME &kp HOME &kp LS(END) &kp LS(END) &kp LC(X)>;
             label = "CUT_LINE";
         };
+
+        switch_mouse: switch_mouse {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&to 13>, <&macro_pause_for_release>;
+
+            label = "SWITCH_MOUSE";
+        };
     };
 
     combos {
@@ -413,7 +421,7 @@
 &none  &none         &kp ESC         &capsword     &dlln          &kp LC(LS(TAB))    &kp LC(TAB)     &cpln                    &sret          &kp END   &kp HOME  &none
 &none  &kp LEFT      &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT      &kp LS(TAB)        &kp LC(DELETE)  &kp RET                  &kp LC(BSPC)   &kp BSPC  &kp TAB   &none
 &none  &kp LC(LEFT)  &kp LC(DOWN)    &kp LC(UP)    &kp LC(RIGHT)  &kp LA(SPACE)      &kp DELETE      &kp LG(LS(PRINTSCREEN))  &kp LC(LA(T))  &end_ret  &selline  &none
-                                     &kp LMETA     &to 0          &mo 5              &mo 5           &none                    &kp RALT
+                                     &kp LMETA     &to 0          &mo 5              &mo 13          &none                    &kp RALT
             >;
         };
 
@@ -486,6 +494,15 @@
 &none  &ht_sk LC(LEFT_ALT) LC(LEFT_ALT)  &ht_sk LALT LALT  &ht_sk LS(LEFT_ALT) LS(LEFT_ALT)  &ht_sk LC(LA(LSHFT)) LC(LA(LSHFT))  &kt LEFT_ALT    &kt LEFT_ALT  &ht_sk LA(LC(LSHFT)) LA(LC(LSHIFT))  &ht_sk LS(LEFT_ALT) LS(LEFT_ALT)  &ht_sk LEFT_ALT LALT  &ht_sk LC(LEFT_ALT) LC(LEFT_ALT)  &none
 &none  &none                             &none             &none                             &none                               &none           &none         &none                                &none                             &none                 &none                             &none
                                                            &none                             &none                               &none           &none         &none                                &none
+            >;
+        };
+
+        mouse {
+            bindings = <
+&trans  &kp Q  &kp W  &kp F   &kp P   &kp G     &kp J   &kp L   &kp U   &kp Y    &kp SEMI  &trans
+&trans  &kp A  &kp R  &kp S   &kp T   &kp D     &kp H   &kp N   &kp E   &kp I    &kp O     &trans
+&trans  &kp Q  &kp Z  &kp C   &kp V   &kp B     &kp K   &kp M   &kp X   &kp DOT  &trans    &trans
+                      &trans  &trans  &trans    &trans  &trans  &trans
             >;
         };
     };
