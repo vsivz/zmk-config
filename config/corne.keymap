@@ -196,6 +196,33 @@
             continue-list = <F22>;
             mods = <(MOD_LSFT)>;
         };
+
+        speed0_5: speed0_5 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "SPEED0_5";
+            #binding-cells = <0>;
+            bindings = <&kp W>, <&kt W>;
+
+            tapping-term-ms = <130>;
+        };
+
+        speed3: speed3 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "SPEED3";
+            #binding-cells = <0>;
+            bindings = <&kp X>, <&kt X>;
+
+            tapping-term-ms = <130>;
+        };
+
+        speed2: speed2 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "SPEED2";
+            #binding-cells = <0>;
+            bindings = <&kp Y>, <&kt Y>;
+
+            tapping-term-ms = <130>;
+        };
     };
 
     macros {
@@ -369,8 +396,29 @@
         tog_mouse: tog_mouse {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_ALT &to 14>;
+            bindings = <&kp LEFT_ALT &to 0>;
             label = "TOG_MOUSE";
+        };
+
+        left_mousemove: left_mousemove {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(LG(LC(J))) &kp LG(F5)>;
+            label = "LEFT_MOUSEMOVE";
+        };
+
+        right_mousemove: right_mousemove {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(LG(LC(H))) &kp LG(F5)>;
+            label = "RIGHT_MOUSEMOVE";
+        };
+
+        mousemove: mousemove {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LG(LA(H)) &kp LG(F5)>;
+            label = "MOUSEMOVE";
         };
     };
 
@@ -381,6 +429,34 @@
             bindings = <&cut_line>;
             key-positions = <4 7>;
             layers = <4 5>;
+        };
+
+        upleft {
+            bindings = <&kp H>;
+            key-positions = <19 21>;
+            timeout-ms = <99999999>;
+            layers = <13>;
+        };
+
+        upright {
+            bindings = <&kp J>;
+            key-positions = <21 22>;
+            timeout-ms = <999999999>;
+            layers = <13>;
+        };
+
+        downright {
+            bindings = <&kp L>;
+            key-positions = <22 20>;
+            timeout-ms = <999999999>;
+            layers = <13>;
+        };
+
+        downleft {
+            bindings = <&kp U>;
+            key-positions = <20 19>;
+            timeout-ms = <999999999>;
+            layers = <13>;
         };
     };
 
@@ -518,19 +594,28 @@
 
         mouse {
             bindings = <
-&to 0   &off_mouse   &kp W            &kp F       &kp P      &kp G     &kp J   &kp LEFT_ALT  &kp LSHFT  &kp LCTRL  &kp SEMI  &trans
-&trans  &kp A        &kp R            &kp S       &mt Y T    &kp D     &kp H   &kp N         &kp E      &kp I      &kp O     &trans
-&trans  &kp LC(TAB)  &kp LC(LS(TAB))  &kp LC(C)   &kp LC(V)  &kp B     &kp K   &kp M         &kp X      &kp DOT    &trans    &trans
-                                      &tog_mouse  &kp SPACE  &trans    &trans  &trans        &trans
+&to 0  &off_mouse   &speed0_5        &speed3     &none      &none        &none  &kp LEFT_ALT  &kp LSHFT  &kp LCTRL  &none  &none
+&kp G  &kp A        &kp R            &kp S       &mt Y T    &kp F        &none  &kp N         &kp E      &kp I      &kp O  &ht_lyr 15 15
+&none  &kp LC(TAB)  &kp LC(LS(TAB))  &kp LC(C)   &kp LC(V)  &none        &none  &none         &none      &none      &none  &none
+                                     &tog_mouse  &kp SPACE  &kp SPACE    &none  &none         &none
             >;
         };
 
         mouse_locked {
             bindings = <
-&to 0   &off_mouse   &kp W            &kp F       &kp P      &kp G     &kp J   &kp LEFT_ALT  &kp LSHFT  &kp LCTRL  &kp SEMI  &trans
-&trans  &kp A        &kp R            &kp S       &mt Y T    &kp D     &kp H   &kp N         &kp E      &kp I      &kp O     &trans
-&trans  &kp LC(TAB)  &kp LC(LS(TAB))  &kp LC(C)   &kp LC(V)  &kp B     &kp K   &kp M         &kp X      &kp DOT    &trans    &trans
-                                      &off_mouse  &kp SPACE  &trans    &trans  &trans        &trans
+&to 0  &off_mouse   &speed0_5        &speed3     &speed2    &none        &none  &kp LEFT_ALT  &kp LSHFT  &kp LCTRL  &none  &none
+&kp G  &kp A        &kp R            &kp S       &mt Y T    &kp F        &none  &kp N         &kp E      &kp I      &kp O  &ht_lyr 15 15
+&none  &kp LC(TAB)  &kp LC(LS(TAB))  &kp LC(C)   &kp LC(V)  &none        &none  &none         &none      &none      &none  &none
+                                     &off_mouse  &kp SPACE  &kp SPACE    &none  &none         &none
+            >;
+        };
+
+        mouse_funcs {
+            bindings = <
+&trans  &trans           &trans            &kp LG(F6)  &trans      &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &left_mousemove  &right_mousemove  &kp LG(F5)  &mousemove  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp LC(TAB)      &kp LS(LC(TAB))   &kp LC(C)   &kp LC(V)   &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                                           &trans      &trans      &trans    &trans  &trans  &trans
             >;
         };
     };
