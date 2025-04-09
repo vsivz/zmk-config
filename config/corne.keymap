@@ -430,31 +430,6 @@
             key-positions = <4 7>;
             layers = <4 5>;
         };
-
-        upleft {
-            bindings = <&kp H>;
-            key-positions = <19 21>;
-            timeout-ms = <99999999>;
-        };
-
-        upright {
-            bindings = <&kp J>;
-            key-positions = <21 22>;
-            timeout-ms = <999999999>;
-        };
-
-        downright {
-            bindings = <&kp L>;
-            key-positions = <22 20>;
-            timeout-ms = <999999999>;
-        };
-
-        downleft {
-            bindings = <&kp U>;
-            key-positions = <20 19>;
-            timeout-ms = <999999999>;
-            layers = <13>;
-        };
     };
 
     keymap {
