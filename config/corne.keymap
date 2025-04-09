@@ -223,6 +223,15 @@
 
             tapping-term-ms = <130>;
         };
+
+        mtab_hold: mtab_hold {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MTAB_HOLD";
+            bindings = <&new_mtab>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+        };
     };
 
     macros {
@@ -420,6 +429,19 @@
             bindings = <&kp LG(LA(H)) &kp LG(F5)>;
             label = "MOUSEMOVE";
         };
+
+        new_mtab: new_mtab {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&mo 16 &kp LEFT_META>,
+                <&macro_pause_for_release>,
+                <&macro_release>,
+                <&mo 16 &kp LEFT_GUI>;
+
+            label = "NEW_MTAB";
+        };
     };
 
     combos {
@@ -467,10 +489,10 @@
 
         navigation {
             bindings = <
-&none  &none               &kp LG(LC(LS(T)))  &kp LG(LC(LS(Q)))   &kp LG(RET)    &af4                 &on_MSTab             &mtab              &kp LG(H)                &kp LG(F)               &none              &none
-&none  &kp LG(LC(LS(J)))   &kp LS(LC(LG(H)))  &kp LG(LA(J))       &kp LA(LG(H))  &kp LG(LC(LS(R)))    &kp LG(LC(UP_ARROW))  &kp LS(LC(LG(Z)))  &kp LG(LC(RIGHT))        &kp LG(LS(LEFT_ARROW))  &kp LS(LG(RIGHT))  &none
-&none  &kp LG(DOWN_ARROW)  &kp LG(UP_ARROW)   &kp LG(LEFT_ARROW)  &kp LG(RIGHT)  &kp LG(F5)           &kp LG(F6)            &kp LC(LG(LEFT))   &kp LC(LG(RIGHT_ARROW))  &kp LC(END)             &kp LC(HOME)       &none
-                                              &none               &none          &none                &none                 &none              &none
+&none  &none               &kp LG(LC(LS(T)))  &kp LG(LC(LS(Q)))   &kp LG(RET)    &af4                 &on_MSTab             &mtab_hold 0 LG(TAB)  &kp LG(H)                &kp LG(F)               &none              &none
+&none  &kp LG(LC(LS(J)))   &kp LS(LC(LG(H)))  &kp LG(LA(J))       &kp LA(LG(H))  &kp LG(LC(LS(R)))    &kp LG(LC(UP_ARROW))  &kp LS(LC(LG(Z)))     &kp LG(LC(RIGHT))        &kp LG(LS(LEFT_ARROW))  &kp LS(LG(RIGHT))  &none
+&none  &kp LG(DOWN_ARROW)  &kp LG(UP_ARROW)   &kp LG(LEFT_ARROW)  &kp LG(RIGHT)  &kp LG(F5)           &kp LG(F6)            &kp LC(LG(LEFT))      &kp LC(LG(RIGHT_ARROW))  &kp LC(END)             &kp LC(HOME)       &none
+                                              &none               &none          &none                &none                 &none                 &none
             >;
         };
 
@@ -487,7 +509,7 @@
             bindings = <
 &none  &none         &kp ESC         &capsword     &dlln          &kp LC(LS(TAB))    &kp LC(TAB)     &cpln                    &sret          &kp END   &kp HOME  &none
 &none  &kp LEFT      &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT      &kp LS(TAB)        &kp LC(DELETE)  &kp RET                  &kp LC(BSPC)   &kp BSPC  &kp TAB   &none
-&none  &kp LC(LEFT)  &kp LC(DOWN)    &kp LC(UP)    &kp LC(RIGHT)  &kp LA(SPACE)      &kp DELETE      &kp LG(LS(PRINTSCREEN))  &kp LC(LA(T))  &end_ret  &selline  &none
+&none  &kp LC(LEFT)  &kp LC(DOWN)    &kp LC(UP)    &kp LC(RIGHT)  &new_mtab          &kp DELETE      &kp LG(LS(PRINTSCREEN))  &kp LC(LA(T))  &end_ret  &selline  &none
                                      &kp LMETA     &to 0          &mo 5              &switch_mouse   &none                    &kp RALT
             >;
         };
@@ -588,6 +610,15 @@
 &trans  &left_mousemove  &right_mousemove  &kp LG(F5)  &mousemove  &trans    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &kp LC(TAB)      &kp LS(LC(TAB))   &kp LC(C)   &kp LC(V)   &trans    &trans  &trans  &trans  &trans  &trans  &trans
                                            &trans      &trans      &trans    &trans  &trans  &trans
+            >;
+        };
+
+        tab_helper_2 {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans    &trans   &trans       &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans   &trans       &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans   &trans       &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans    &kp TAB  &kp LS(TAB)  &trans
             >;
         };
     };
