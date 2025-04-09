@@ -396,7 +396,7 @@
         tog_mouse: tog_mouse {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_ALT &to 0>;
+            bindings = <&kp LEFT_ALT &to 14>;
             label = "TOG_MOUSE";
         };
 
@@ -435,21 +435,18 @@
             bindings = <&kp H>;
             key-positions = <19 21>;
             timeout-ms = <99999999>;
-            layers = <13>;
         };
 
         upright {
             bindings = <&kp J>;
             key-positions = <21 22>;
             timeout-ms = <999999999>;
-            layers = <13>;
         };
 
         downright {
             bindings = <&kp L>;
             key-positions = <22 20>;
             timeout-ms = <999999999>;
-            layers = <13>;
         };
 
         downleft {
