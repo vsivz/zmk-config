@@ -426,7 +426,7 @@
         mousemove: mousemove {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LG(RA(H)) &kp LG(F5)>;
+            bindings = <&kp LG(LA(H)) &kp LG(F5)>;
             label = "MOUSEMOVE";
         };
 
