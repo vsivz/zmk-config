@@ -5,6 +5,7 @@
  */
 
 #include <behaviors.dtsi>
+#include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
 
@@ -521,7 +522,7 @@
             bindings = <
 &none  &none         &kp ESC         &capsword     &dlln          &kp LC(LS(TAB))    &kp LC(TAB)  &cpln                    &sret          &kp END   &kp HOME  &none
 &none  &kp LEFT      &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT      &kp LS(TAB)        &kp LC(DEL)  &kp RET                  &kp LC(BSPC)   &kp BSPC  &kp TAB   &none
-&none  &kp LC(LEFT)  &kp LC(DOWN)    &kp LC(UP)    &kp LC(RIGHT)  &kp LA(SPACE)      &kp DELETE   &kp LG(LS(PRINTSCREEN))  &kp LC(LA(T))  &end_ret  &selline  &none
+&none  &kp LC(LEFT)  &kp LC(DOWN)    &kp LC(UP)    &kp LC(RIGHT)  &new_mtab          &kp DELETE   &kp LG(LS(PRINTSCREEN))  &kp LC(LA(T))  &end_ret  &selline  &none
                                      &kp LMETA     &to 0          &trans             &trans       &none                    &kp RALT
             >;
         };
@@ -546,10 +547,10 @@
 
         system {
             bindings = <
-&bootloader   &kp F1      &kp F2      &kp F3           &kp F4             &kp F5    &kp F6  &kp F7        &kp F8              &kp F9                    &kp F10                   &bootloader
-&out OUT_TOG  &kp K_MUTE  &kp K_PREV  &kp K_NEXT       &kp K_PLAY_PAUSE   &to 9     &to 9   &kp C_REWIND  &kp C_FAST_FORWARD  &kp C_BRI_INC             &kp C_BRI_DEC             &out OUT_TOG
-&sys_reset    &kp F11     &kp F12     &kp C_VOLUME_UP  &kp C_VOLUME_DOWN  &to 0     &to 0   &to 7         &to 6               &kp C_BRIGHTNESS_MINIMUM  &kp C_BRIGHTNESS_MAXIMUM  &sys_reset
-                                      &none            &none              &none     &none   &none         &none
+&bootloader   &kp F1      &kp F2      &kp F3           &kp F4             &kp F5       &kp F6     &kp F7        &kp F8              &kp F9                    &kp F10                   &bootloader
+&out OUT_TOG  &kp K_MUTE  &kp K_PREV  &kp K_NEXT       &kp K_PLAY_PAUSE   &to 9        &to 9      &kp C_REWIND  &kp C_FAST_FORWARD  &kp C_BRI_INC             &kp C_BRI_DEC             &out OUT_TOG
+&sys_reset    &kp F11     &kp F12     &kp C_VOLUME_UP  &kp C_VOLUME_DOWN  &soft_off    &soft_off  &to 7         &to 6               &kp C_BRIGHTNESS_MINIMUM  &kp C_BRIGHTNESS_MAXIMUM  &sys_reset
+                                      &none            &none              &to 0        &to 0      &none         &none
             >;
         };
 
@@ -584,7 +585,7 @@
             bindings = <
 &none  &none                             &none             &none                             &ht_sk LEFT_META LEFT_META          &none           &none         &ht_sk LEFT_META LEFT_META           &none                             &none                 &none                             &none
 &none  &ht_sk LC(LEFT_ALT) LC(LEFT_ALT)  &ht_sk LALT LALT  &ht_sk LS(LEFT_ALT) LS(LEFT_ALT)  &ht_sk LC(LA(LSHFT)) LC(LA(LSHFT))  &kt LEFT_ALT    &kt LEFT_ALT  &ht_sk LA(LC(LSHFT)) LA(LC(LSHIFT))  &ht_sk LS(LEFT_ALT) LS(LEFT_ALT)  &ht_sk LEFT_ALT LALT  &ht_sk LC(LEFT_ALT) LC(LEFT_ALT)  &none
-&none  &none                             &none             &none                             &none                               &none           &none         &none                                &none                             &none                 &none                             &none
+&none  &none                             &none             &none                             &none                               &to 17          &to 17        &none                                &none                             &none                 &none                             &none
                                                            &none                             &none                               &none           &none         &none                                &none
             >;
         };
@@ -622,6 +623,15 @@
 &trans  &trans  &trans  &trans  &trans  &trans    &trans   &trans       &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans   &trans       &trans  &trans  &trans  &trans
                         &trans  &trans  &trans    &kp TAB  &kp LS(TAB)  &trans
+            >;
+        };
+
+        bluetooth {
+            bindings = <
+&none  &bt BT_CLR     &none          &none          &none  &none    &none  &none  &none  &none  &none  &none
+&none  &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &none  &none    &none  &none  &none  &none  &none  &none
+&none  &bt BT_DISC 0  &bt BT_DISC 1  &bt BT_DISC 2  &none  &none    &none  &none  &none  &none  &none  &none
+                                     &none          &none  &to 0    &to 0  &none  &none
             >;
         };
     };
