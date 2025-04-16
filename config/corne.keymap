@@ -592,27 +592,27 @@
 
         mouse {
             bindings = <
-&to 0  &off_mouse   &kp W            &kp X       &kp Y      &none        &none  &kp LEFT_ALT  &kp LSHFT  &kp LCTRL  &none  &none
-&kp G  &kp A        &kp R            &kp S       &mt Y T    &kp F        &none  &kp N         &kp E      &kp I      &kp O  &ht_lyr 15 15
-&none  &kp LC(TAB)  &kp LC(LS(TAB))  &kp LC(C)   &kp LC(V)  &none        &none  &none         &none      &none      &none  &none
-                                     &tog_mouse  &kp SPACE  &kp SPACE    &none  &none         &none
+&to 0      &off_mouse   &kp W            &kp X       &kp Y      &none        &none          &none          &kt LSHFT  &none  &none  &none
+&kt SPACE  &kp A        &kp R            &kp S       &mt Y T    &kp F        &ht_lyr 15 15  &kp N          &kp E      &kp I  &kp O  &ht_lyr 15 15
+&kp G      &kp LC(TAB)  &kp LC(LS(TAB))  &kp LC(C)   &kp LC(V)  &none        &none          &kp SEMICOLON  &kp D      &kp C  &kp Z  &none
+                                         &tog_mouse  &kp SPACE  &kp SPACE    &none          &none          &none
             >;
         };
 
         mouse_locked {
             bindings = <
-&to 0  &off_mouse   &kp W            &kp X       &kp Y      &none        &none  &kp LEFT_ALT  &kp LSHFT  &kp LCTRL  &none  &none
-&kp G  &kp A        &kp R            &kp S       &mt Y T    &kp F        &none  &kp N         &kp E      &kp I      &kp O  &ht_lyr 15 15
-&none  &kp LC(TAB)  &kp LC(LS(TAB))  &kp LC(C)   &kp LC(V)  &none        &none  &none         &none      &none      &none  &none
-                                     &off_mouse  &kp SPACE  &kp SPACE    &none  &none         &none
+&to 0      &off_mouse   &kp W            &kp X       &kp Y      &none        &none          &none          &kt LSHFT  &none  &none  &none
+&kt SPACE  &kp A        &kp R            &kp S       &mt Y T    &kp F        &ht_lyr 15 15  &kp N          &kp E      &kp I  &kp O  &ht_lyr 15 15
+&kp G      &kp LC(TAB)  &kp LC(LS(TAB))  &kp LC(C)   &kp LC(V)  &none        &none          &kp SEMICOLON  &kp D      &kp C  &kp Z  &none
+                                         &off_mouse  &kp SPACE  &kp SPACE    &none          &none          &none
             >;
         };
 
         mouse_funcs {
             bindings = <
-&trans  &trans           &trans            &kp LG(F6)  &trans      &trans    &trans    &trans         &trans    &trans  &trans  &trans
-&trans  &left_mousemove  &right_mousemove  &kp LG(F5)  &mousemove  &trans    &trans    &trans         &trans    &trans  &trans  &trans
-&trans  &kp LC(TAB)      &kp LS(LC(TAB))   &kp LC(C)   &kp LC(V)   &trans    &trans    &trans         &trans    &trans  &trans  &trans
+&trans  &trans           &trans            &kp LG(F6)  &trans      &trans    &trans    &kp LALT       &kp LSHFT  &kp LCTRL  &trans  &trans
+&trans  &left_mousemove  &right_mousemove  &kp LG(F5)  &mousemove  &trans    &trans    &trans         &trans     &trans     &trans  &trans
+&trans  &kp LC(TAB)      &kp LS(LC(TAB))   &kp LC(C)   &kp LC(V)   &trans    &trans    &trans         &trans     &trans     &trans  &trans
                                            &kt Y       &kt W       &kt X     &kt LGUI  &kt LG(LCTRL)  &kt LGUI
             >;
         };
